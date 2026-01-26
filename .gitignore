@@ -1,55 +1,40 @@
-# Prerequisites
-*.d
+# --- NeuraBSD Master Gitignore ---
 
-# Object files
+# Kompilate und Objekte (C/C++)
 *.o
-*.ko
 *.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
 *.so
-*.so.*
-*.dylib
-
-# Executables
+*.a
+*.lib
+*.dll
 *.exe
 *.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Qt6 / Build-Systeme
+/build/
+/build-*/
+*.user
+.cmake/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.pro.user
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# System-spezifische Dateien
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.bak
 
-# debug information files
-*.dwo
+# NeuraBSD ISO & Release Artefakte
+/release/*.iso
+/release/*.img
+/release/staging/
+
+# Kernel & Boot (DaemonPath spezifisch)
+/sys/compile/
+/sys/arch/*/compile/
