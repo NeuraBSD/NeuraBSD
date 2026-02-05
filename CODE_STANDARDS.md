@@ -1,47 +1,49 @@
-# NeuraBSD 🌀 | Code Standards & Guidelines
+# NeuraBSD | Code Standards & Guidelines
 
-This document outlines the coding standards for the NeuraBSD project. To ensure seamless compatibility and maintainability with our upstream base, we strictly follow the **OpenBSD Style Guidelines**.
+This document defines the coding standards for the NeuraBSD project. To ensure seamless compatibility with our upstream base while maintaining a distinct identity, we combine **OpenBSD KNF** with the **NeuraBSD Hybrid Style**.
 
 ---
 
 ## 1. The Golden Rule: OpenBSD style(9)
-For all C code (Kernel, Base-System, and System Tools), NeuraBSD adopts the official **OpenBSD KNF (Kernel Normal Form)**.
+For all C code (Kernel, Base System, and core utilities like **DaemonPath**), NeuraBSD strictly adopts the official **OpenBSD KNF (Kernel Normal Form)**.
 
 * **Reference:** [OpenBSD style(9) manual page](https://man.openbsd.org/style.9)
-* **Indentation:** Hard tabs (8 characters wide).
-* **Braces:** Following the KNF convention (as defined in `style(9)`).
-* **Naming:** Use `snake_case` for all C-level functions and variables.
+* **Indentation:** Hard Tabs (8 characters wide).
+* **Braces:** KNF convention (Braces on the same line for `if`, `for`, `while`).
+* **Naming:** `snake_case` for all C functions and variables.
 
-## 2. Language-Specific Rules
+## 2. NeuraBSD Python Style (Hybrid)
+To maintain visual consistency within the **MASTER-REPO**, Python scripts (e.g., `neura-tools`) follow a modified PEP 8 standard.
 
-### C & Assembly (base-system, DaemonPath)
-* **Standard:** C99 / K&R style as per OpenBSD standards.
-* **Security:** Use secure functions (`strlcpy`, `strlcat`, `snprintf`) instead of unsafe alternatives. Use `pledge(2)` and `unveil(2)` where possible to enhance security.
-* **Commits:** Follow the OpenBSD habit of concise, meaningful commit messages.
+* **Indentation:** **Hard Tabs** (8 characters wide) – Mandatory to match C-level visual rhythm.
+* **Naming:** * Variables & Functions: `snake_case`.
+    * Classes: `PascalCase`.
+* **Line Length:** Maximum 80 characters.
+* **Documentation:** Concise docstrings in `mdoc(7)` style.
 
-### C++ & Qt6 (CoreSeed, AxonSurface, Neura-Apps)
-While the base system is pure C, our UI layer uses modern C++.
+## 3. C++ & Qt6 (CoreSeed, AxonSurface)
+The graphical layer focuses on performance and the unique NeuraBSD aesthetic.
+
 * **Standard:** C++17 or higher.
-* **Naming:** * Classes: `CamelCase`
-    * Methods: `camelCase`
-    * Member variables: `m_camelCase`
-* **UI Integration:** Adhere to the **Neura-Blue (#0055ff)** and **Purple Glow (#bc13fe)** color palette defined in the branding assets.
+* **Naming:** * Classes: `PascalCase`.
+    * Methods: `camelCase`.
+    * Member Variables: `m_camelCase`.
+* **UI Integration:** Statically enforced CSS root sequence for **AxonSurface**:
+    * `--bg-black: #0a0a0a;`
+    * `--surface-black: #121212;`
+    * `--beastie-purple: #bc13fe;` (Our signature Purple).
+    * `--neura-blue: #0055ff;`
 
-### Shell Scripts (neura-tools)
-* **Interpreter:** `/bin/sh` (POSIX) or `/bin/ksh`. 
-* **Guidelines:** Follow the scripting style found in OpenBSD's `/etc/rc` scripts.
+## 4. Security & Architecture
+* **Sandboxing:** Usage of `pledge(2)` and `unveil(2)` is mandatory for all new NeuraBSD utilities.
+* **Boot Sequence:** The lifecycle begins with the **CoreSeed** graphical installer, followed by the **DaemonPath** boot manager, and terminates in the **AxonSurface** DE.
+* **Memory Safety:** Always prefer `strlcpy`, `strlcat`, and `snprintf` over unsafe alternatives.
 
----
-
-## 3. Visual & UI Consistency
-All graphical components must reflect the NeuraBSD identity:
-* **Font:** Monospace / Fixed-width for all technical readouts.
-* **Colors:** High contrast dark backgrounds (`#0a0a0a`) with blue accents.
-* **Logic:** Every UI element should be lightweight and non-blocking (asynchronous).
-
-## 4. Documentation
-* **Header:** Every file must start with the BSD 3-Clause license header.
-* **Manpages:** New system tools should ideally come with a corresponding `mdoc(7)` formatted manual page.
+## 5. Documentation & Headers
+* **File Header:** Every source file must start with the NeuraBSD version string and the BSD 3-Clause license:
+    `$NeuraBSD: path/to/file,v 1.x Year/Month/Day Author Exp $`
+* **Manual Pages:** All system-level tools must be accompanied by an `mdoc(7)` formatted manpage.
 
 ---
-*"Clean code is the foundation of a secure system. We stand on the shoulders of giants by following the OpenBSD style."*
+
+*"Unified code is the foundation of system stability. From the first line of CoreSeed to the final boot with DaemonPath: One rhythm, one system."*

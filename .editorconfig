@@ -1,0 +1,35 @@
+# .editorconfig for NeuraBSD
+# $NeuraBSD: .editorconfig,v 1.0 2026/02/05 18:50:00 akrobat Exp $
+
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+# C and C++ (OpenBSD KNF / NeuraBSD Core)
+# This ensures that even the legacy main.cpp style is maintained
+[*.{c,h,cpp,hpp}]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+max_line_length = 80
+
+# NeuraBSD Python Hybrid Style
+[*.py]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+max_line_length = 80
+
+# Markdown and Documentation
+[*.md]
+indent_style = space
+indent_size = 4
+
+# Shell Scripts (neura-tools)
+[*.sh]
+indent_style = tab
+indent_size = 8

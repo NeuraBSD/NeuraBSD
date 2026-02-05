@@ -1,0 +1,16 @@
+{
+  "component": "DaemonPath",
+  "requirements": {
+    "canvas_size": "800x600",
+    "background_hex": "#0a0d10",
+    "primary_glow": "#00d4ff",
+    "secondary_glow": "#9d50bb",
+    "bit_depth": 24,
+    "no_alpha": true
+  },
+  "metadata": {
+    "author": "CodeAkrobat",
+    "project": "NeuraBSD",
+    "description": "Boot-Manager Splash Screen Identity"
+  }
+}
