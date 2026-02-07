@@ -38,3 +38,4 @@ Thumbs.db
 # Kernel & Boot (DaemonPath spezifisch)
 /sys/compile/
 /sys/arch/*/compile/
+CoreSeed/build/
