@@ -1,0 +1,67 @@
+\chapter{\$\+Neura\+BSD\+: CODE\+\_\+\+STANDARDS.\+md, v 1.\+1 2026/02/07 codeakrobat Exp \$ }
+\hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS}{}\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS}\index{\$NeuraBSD: CODE\_STANDARDS.md, v 1.1 2026/02/07 codeakrobat Exp \$@{\$NeuraBSD: CODE\_STANDARDS.md, v 1.1 2026/02/07 codeakrobat Exp \$}}
+\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md25}%
+\Hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md25}%
+\hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md26}{}\doxysection{\texorpdfstring{Neura\+BSD \texorpdfstring{$\vert$}{|} Code Standards \& Guidelines}{Neura\+BSD \texorpdfstring{$\vert$}{|} Code Standards \& Guidelines}}\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md26}
+This document defines the coding standards for the Neura\+BSD project. To ensure seamless compatibility with our upstream base while maintaining a distinct identity, we combine {\bfseries{Open\+BSD KNF}} with the {\bfseries{Neura\+BSD Hybrid Style}}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md28}{}\doxysubsection{\texorpdfstring{1. The Golden Rule\+: Open\+BSD style(9)}{1. The Golden Rule\+: Open\+BSD style(9)}}\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md28}
+For all C code (Kernel, Base System, and core utilities like {\bfseries{Daemon\+Path}}), Neura\+BSD strictly adopts the official {\bfseries{Open\+BSD KNF (Kernel Normal Form)}}.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Reference\+:}} \href{https://man.openbsd.org/style.9}{\texttt{Open\+BSD style(9) manual page}}
+\item {\bfseries{Indentation\+:}} Hard Tabs (8 characters wide).
+\item {\bfseries{Braces\+:}} KNF convention (Braces on the same line for {\ttfamily if}, {\ttfamily for}, {\ttfamily while}).
+\item {\bfseries{Naming\+:}} {\ttfamily snake\+\_\+case} for all C functions and variables.
+\end{DoxyItemize}\hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md29}{}\doxysubsection{\texorpdfstring{2. Neura\+BSD Python Style (Hybrid)}{2. Neura\+BSD Python Style (Hybrid)}}\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md29}
+To maintain visual consistency within the {\bfseries{MASTER-\/\+REPO}}, Python scripts (e.\+g., {\ttfamily neura-\/tools}) follow a modified PEP 8 standard.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Indentation\+:}} {\bfseries{Hard Tabs}} (8 characters wide) – Mandatory to match C-\/level visual rhythm.
+\item {\bfseries{Naming\+:}} \texorpdfstring{$\ast$}{*} Variables \& Functions\+: {\ttfamily snake\+\_\+case}.
+\begin{DoxyItemize}
+\item Classes\+: {\ttfamily Pascal\+Case}.
+\end{DoxyItemize}
+\item {\bfseries{Line Length\+:}} Maximum 80 characters.
+\item {\bfseries{Documentation\+:}} Concise docstrings in {\ttfamily mdoc(7)} style.
+\end{DoxyItemize}\hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md30}{}\doxysubsection{\texorpdfstring{3. C++ \& Qt6 (Core\+Seed, Axon\+Surface)}{3. C++ \& Qt6 (Core\+Seed, Axon\+Surface)}}\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md30}
+The graphical layer focuses on performance and the unique Neura\+BSD aesthetic.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Standard\+:}} C++17 or higher.
+\item {\bfseries{Naming\+:}} \texorpdfstring{$\ast$}{*} Classes\+: {\ttfamily Pascal\+Case}.
+\begin{DoxyItemize}
+\item Methods\+: {\ttfamily camel\+Case}.
+\item Member Variables\+: {\ttfamily m\+\_\+camel\+Case}.
+\end{DoxyItemize}
+\item {\bfseries{UI Integration\+:}} Statically enforced CSS root sequence for {\bfseries{Axon\+Surface}}\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/bg-\/black\+: \#0a0a0a;}
+\item {\ttfamily -\/-\/surface-\/black\+: \#121212;}
+\item {\ttfamily -\/-\/beastie-\/purple\+: \#bc13fe;} (Signature Neura-\/\+Purple).
+\item {\ttfamily -\/-\/neura-\/blue\+: \#0055ff;}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md31}{}\doxysubsection{\texorpdfstring{4. Security \& Architecture}{4. Security \& Architecture}}\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md31}
+
+\begin{DoxyItemize}
+\item {\bfseries{Sandboxing\+:}} Usage of {\ttfamily pledge(2)} and {\ttfamily unveil(2)} is mandatory for all new Neura\+BSD utilities.
+\item {\bfseries{Boot Sequence\+:}} The lifecycle begins with the {\bfseries{Core\+Seed}} graphical installer, followed by the {\bfseries{Daemon\+Path}} boot manager, and terminates in the {\bfseries{Axon\+Surface}} DE.
+\item {\bfseries{Memory Safety\+:}} Always prefer {\ttfamily strlcpy}, {\ttfamily strlcat}, and {\ttfamily snprintf} over unsafe alternatives.
+\end{DoxyItemize}\hypertarget{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md32}{}\doxysubsection{\texorpdfstring{5. Documentation \& Headers}{5. Documentation \& Headers}}\label{md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS_autotoc_md32}
+
+\begin{DoxyItemize}
+\item {\bfseries{File Header\+:}} Every source file must start with the Neura\+BSD version string and the BSD 3-\/Clause license\+: {\ttfamily \$Neura\+BSD\+: path/to/file, v 1.\+x Year/\+Month/\+Day Author Exp \$}
+\item {\bfseries{Bilingualism\+:}} Source code comments must be provided in both {\bfseries{German}} and {\bfseries{English}}.
+\item {\bfseries{Manual Pages\+:}} All system-\/level tools must be accompanied by an {\ttfamily mdoc(7)} formatted manpage.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+{\itshape "{}\+Unified code is the foundation of system stability. From the first line of Core\+Seed to the final boot with Daemon\+Path\+: One rhythm, one system."{}}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Copyright (c) 2026, Neura\+BSD / Daniel Hilbert (Code\+Akrobat) \href{mailto:lead@neurabsd.org}{\texttt{lead@neurabsd.\+org}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} {\bfseries{License\+: BSD 3-\/Clause}} 

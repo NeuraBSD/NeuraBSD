@@ -1,0 +1,38 @@
+\doxysection{img\+\_\+to\+\_\+header.\+py}
+\hypertarget{img__to__header_8py_source}{}\label{img__to__header_8py_source}\index{/home/codeakrobat/neurabsd/neura-\/tools/scripts/build-\/helpers/img\_to\_header.py@{/home/codeakrobat/neurabsd/neura-\/tools/scripts/build-\/helpers/img\_to\_header.py}}
+\mbox{\hyperlink{img__to__header_8py}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00001}\mbox{\hyperlink{namespaceimg__to__header}{00001}}\ \textcolor{keyword}{import}\ PIL.Image\ \textcolor{keyword}{as}\ Image}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00002}00002\ \textcolor{keyword}{import}\ sys}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00003}00003\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00005}\mbox{\hyperlink{namespaceimg__to__header_a4fc8106be81d8f6f27214286349a068a}{00005}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceimg__to__header_a4fc8106be81d8f6f27214286349a068a}{convert\_to\_header}}(input\_png,\ output\_h):}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00006}00006\ \ \ \ \ img\ =\ Image.open(input\_png).convert(\textcolor{stringliteral}{'RGB'})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00007}00007\ \ \ \ \ width,\ height\ =\ img.size}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00008}00008\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ width\ !=\ 800\ \textcolor{keywordflow}{or}\ height\ !=\ 600:}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Warnung:\ Bildgröße\ ist\ \{width\}x\{height\},\ erwartet\ wurde\ 800x600!"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{with}\ open(output\_h,\ \textcolor{stringliteral}{'w'})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}/*\ Auto-\/generated\ splash\ screen\ for\ DaemonPath\ */\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00014}00014\ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}\#include\ <stdint.h>\(\backslash\)n\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ f.write(f\textcolor{stringliteral}{"{}\#define\ SPLASH\_WIDTH\ \{width\}\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00016}00016\ \ \ \ \ \ \ \ \ f.write(f\textcolor{stringliteral}{"{}\#define\ SPLASH\_HEIGHT\ \{height\}\(\backslash\)n\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00017}00017\ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}const\ uint32\_t\ splash\_data[]\ =\ \{\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ y\ \textcolor{keywordflow}{in}\ range(height):}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ line\ =\ \textcolor{stringliteral}{"{}\ \ \ \ "{}}}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ x\ \textcolor{keywordflow}{in}\ range(width):}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r,\ g,\ b\ =\ img.getpixel((x,\ y))}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Packen\ in\ 0xRRGGBB\ Format}}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pixel\ =\ (r\ <<\ 16)\ |\ (g\ <<\ 8)\ |\ b}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ line\ +=\ f\textcolor{stringliteral}{"{}0x\{pixel:06x\},\ "{}}}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ f.write(line\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ f.write(\textcolor{stringliteral}{"{}\};\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00030}00030\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{namespaceimg__to__header_a4fc8106be81d8f6f27214286349a068a}{convert\_to\_header}}(\textcolor{stringliteral}{'boot\_splash\_800x600.png'},\ \textcolor{stringliteral}{'splash\_data.h'})}
+\DoxyCodeLine{\Hypertarget{img__to__header_8py_source_l00032}00032\ \ \ \ \ print(\textcolor{stringliteral}{"{}splash\_data.h\ erfolgreich\ erstellt."{}})}
+
+\end{DoxyCode}

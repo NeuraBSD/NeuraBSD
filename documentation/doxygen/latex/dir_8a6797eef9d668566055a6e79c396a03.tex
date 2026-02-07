@@ -1,0 +1,36 @@
+\doxysection{/home/codeakrobat/neurabsd/neura-\/tools/graphics/branding/\+Daemon\+Path-\/\+Verzeichnisreferenz}
+\hypertarget{dir_8a6797eef9d668566055a6e79c396a03}{}\label{dir_8a6797eef9d668566055a6e79c396a03}\index{/home/codeakrobat/neurabsd/neura-\/tools/graphics/branding/DaemonPath-\/Verzeichnisreferenz@{/home/codeakrobat/neurabsd/neura-\/tools/graphics/branding/DaemonPath-\/Verzeichnisreferenz}}
+Diagramm der Verzeichnisabhängigkeiten für Daemon\+Path\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{dir_8a6797eef9d668566055a6e79c396a03_dep}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+\hypertarget{README.md_autotoc_md5}{}\doxysubsection{\texorpdfstring{Daemon\+Path Branding Assets}{Daemon\+Path Branding Assets}}\label{README.md_autotoc_md5}
+This directory contains all visual identity components specifically tailored for the {\bfseries{Daemon\+Path Boot Manager}}.\hypertarget{README.md_autotoc_md6}{}\doxysubsection{\texorpdfstring{Design Specifications}{Design Specifications}}\label{README.md_autotoc_md6}
+Due to the early system initialization phase, these assets follow stricter constraints than the Axon\+Surface DE to ensure compatibility with various framebuffers\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Mandatory Background Color\+:}} {\ttfamily \#0a0d10} (Deep Blue-\/\+Black)
+\item {\bfseries{Accent Colors\+:}} \texorpdfstring{$\ast$}{*} Neura-\/\+Blue\+: {\ttfamily \#00d4ff}
+\begin{DoxyItemize}
+\item Neura-\/\+Purple\+: {\ttfamily \#9d50bb}
+\end{DoxyItemize}
+\item {\bfseries{Target Resolution\+:}} 800x600 Pixels (VGA/\+VESA Standard)
+\item {\bfseries{Format\+:}} PNG-\/24 (Flattened, no Alpha channel recommended for legacy BIOS/\+UEFI compatibility)
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md7}{}\doxysubsection{\texorpdfstring{Component Overview}{Component Overview}}\label{README.md_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item {\ttfamily boot\+\_\+splash\+\_\+800x600.\+png}\+: The primary splash screen featuring the Neura\+BSD Trident logo and the "{}\+Powered by Daemon\+Path"{} footer.
+\item {\ttfamily loading\+\_\+bar\+\_\+assets.\+png}\+: Individual segments and masks for the animated progress bar.
+\item {\ttfamily dp\+\_\+logo\+\_\+mini.\+png}\+: A compact version of the Daemon\+Path logo for status indicators.
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md8}{}\doxysubsection{\texorpdfstring{Implementation Notes}{Implementation Notes}}\label{README.md_autotoc_md8}
+These assets are referenced during the build process of {\ttfamily src/boot/daemonpath/}. To avoid dependencies on filesystem drivers during the early boot stage, it is recommended to convert these images into C header files (.h) or binary blobs embedded directly into the bootloader executable.
+
+\DoxyHorRuler{0}
+ {\itshape Part of the Neura\+BSD Master-\/\+Repo} {\itshape Maintained by\+: Daniel Hilbert \& Code\+Akrobat} 

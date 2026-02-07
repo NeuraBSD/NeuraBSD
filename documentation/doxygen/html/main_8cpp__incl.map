@@ -1,0 +1,15 @@
+<map id="/home/codeakrobat/neurabsd/CoreSeed/src/main.cpp" name="/home/codeakrobat/neurabsd/CoreSeed/src/main.cpp">
+<area shape="rect" id="Node000001" title="Main entry point for the CoreSeed graphical installer." alt="" coords="240,5,451,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,98,110,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,53,119,96,117,91,268,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="134,98,211,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="301,53,215,93,213,89,298,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="235,98,344,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="333,52,309,86,305,83,329,49"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="368,98,435,126"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="362,49,386,83,382,86,358,52"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="458,98,564,126"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="391,48,472,88,470,93,388,53"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="588,98,647,126"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="418,48,573,94,572,100,417,53"/>
+</map>

@@ -1,3 +1,5 @@
+# $NeuraBSD: CODE_STANDARDS.md, v 1.1 2026/02/07 codeakrobat Exp $
+
 # NeuraBSD | Code Standards & Guidelines
 
 This document defines the coding standards for the NeuraBSD project. To ensure seamless compatibility with our upstream base while maintaining a distinct identity, we combine **OpenBSD KNF** with the **NeuraBSD Hybrid Style**.
@@ -31,7 +33,7 @@ The graphical layer focuses on performance and the unique NeuraBSD aesthetic.
 * **UI Integration:** Statically enforced CSS root sequence for **AxonSurface**:
     * `--bg-black: #0a0a0a;`
     * `--surface-black: #121212;`
-    * `--beastie-purple: #bc13fe;` (Our signature Purple).
+    * `--beastie-purple: #bc13fe;` (Signature Neura-Purple).
     * `--neura-blue: #0055ff;`
 
 ## 4. Security & Architecture
@@ -41,9 +43,13 @@ The graphical layer focuses on performance and the unique NeuraBSD aesthetic.
 
 ## 5. Documentation & Headers
 * **File Header:** Every source file must start with the NeuraBSD version string and the BSD 3-Clause license:
-    `$NeuraBSD: path/to/file,v 1.x Year/Month/Day Author Exp $`
+    `$NeuraBSD: path/to/file, v 1.x Year/Month/Day Author Exp $`
+* **Bilingualism:** Source code comments must be provided in both **German** and **English**.
 * **Manual Pages:** All system-level tools must be accompanied by an `mdoc(7)` formatted manpage.
 
 ---
 
 *"Unified code is the foundation of system stability. From the first line of CoreSeed to the final boot with DaemonPath: One rhythm, one system."*
+
+**Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat) <lead@neurabsd.org>**
+**License: BSD 3-Clause**

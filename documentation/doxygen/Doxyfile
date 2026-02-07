@@ -1,0 +1,64 @@
+# $NeuraBSD: Doxyfile, v 1.3 2026/02/07 codeakrobat Exp $
+
+# --- Projekt-Informationen ---
+PROJECT_NAME           = "NeuraBSD"
+PROJECT_NUMBER         = "0.1.0-ALPHA"
+PROJECT_BRIEF          = "Everything starts with CoreSeed, DaemonPath, and AxonSurface"
+PROJECT_LOGO           = ../../neura-tools/graphics/branding/global/logo.png
+OUTPUT_DIRECTORY       = .
+OUTPUT_LANGUAGE        = German
+TAB_SIZE               = 8
+MARKDOWN_SUPPORT       = YES
+
+# --- Main Page Setting ---
+# Hier legen wir fest, dass die Mainpage.md die Startseite ist
+USE_MDFILE_AS_MAINPAGE = Mainpage.md
+
+# --- Eingabe-Pfade ---
+# Wir fügen "." hinzu, damit er die Mainpage.md im aktuellen Ordner findet
+INPUT                  = . \
+                         ../../CoreSeed \
+                         ../../AxonSurface \
+                         ../../DaemonPath \
+                         ../../neura-tools \
+                         ../../README.md \
+                         ../../CODE_STANDARDS.md
+
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# --- Ausschluss-Regeln ---
+EXCLUDE                = ../../CoreSeed/build \
+                         ../../CoreSeed/CMakeFiles \
+                         ../../.git
+
+# --- HTML Design (Neura-Blau-Schema) ---
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_COLORSTYLE_HUE    = 215
+HTML_COLORSTYLE_SAT    = 80
+HTML_COLORSTYLE_GAMMA  = 90
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_MENUS     = YES
+
+# --- Diagramme & Graphviz ---
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 4
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+DIRECTORY_GRAPH        = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+
+# --- Quellcode-Browser ---
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
