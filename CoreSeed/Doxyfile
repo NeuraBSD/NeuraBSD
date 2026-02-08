@@ -1,0 +1,13 @@
+# $NeuraBSD: CoreSeed/Doxyfile, v 1.1 2026/02/08 CodeAkrobat Exp $
+PROJECT_NAME           = "NeuraBSD CoreSeed"
+PROJECT_BRIEF          = "Graphical Deployment System for OpenBSD"
+OUTPUT_DIRECTORY       = documentation
+INPUT                  = src/ui src/core src/pages src/main.cpp
+RECURSIVE              = YES
+FILE_PATTERNS          = *.cpp *.hpp
+OUTPUT_LANGUAGE        = German
+EXTRACT_ALL            = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+# Sorgt dafür, dass die Header-Kommentare im Doxygen-Stil erkannt werden
+JAVADOC_AUTOBRIEF      = YES
