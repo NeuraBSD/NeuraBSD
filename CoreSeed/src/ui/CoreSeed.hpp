@@ -1,27 +1,31 @@
-/* $NeuraBSD: CoreSeed/src/ui/CoreSeed.hpp, v 1.2 2026/02/08 CodeAkrobat Exp $ */
+/* $NeuraBSD: CoreSeed/src/ui/CoreSeed.hpp, v 1.1 2026/02/08 codeakrobat Exp $ */
 /*
- * DE: Host-Fenster für den CoreSeed Installer.
- * EN: Host window for the CoreSeed installer.
+ * DE: Header für das Hauptfenster des Installers. 
+ * EN: Header for the main installer window.
  *
  * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
  * License: BSD 3-Clause
  */
 
-#ifndef CORESEED_HPP
-#define CORESEED_HPP
+#pragma once
+#include <QMainWindow>
+#include <QStackedWidget>
+#include "../pages/DiagnosticPage.hpp"
+#include "../pages/PartitionPage.hpp"
+#include "../pages/TerminalPage.hpp"
 
-#include <QWizard>
-
-/**
- * @class CoreSeed
- * @brief Der Haupt-Wizard für die Installation.
- * * DE: Verwaltet die verschiedenen Installer-Seiten (Diagnose, Terminal, etc.).
- * EN: Manages the various installer pages (Diagnostic, Terminal, etc.).
- */
-class CoreSeed : public QWizard {
+class CoreSeed : public QMainWindow {
     Q_OBJECT
-public:
-    explicit CoreSeed(QWidget *parent = nullptr);
-};
 
-#endif
+public:
+    CoreSeed(QWidget *parent = nullptr);
+    ~CoreSeed();
+
+private:
+    QStackedWidget *m_pages;
+    DiagnosticPage *m_diagPage;
+    PartitionPage  *m_partPage;
+    TerminalPage   *m_termPage;
+
+    void setupLayout();
+};
