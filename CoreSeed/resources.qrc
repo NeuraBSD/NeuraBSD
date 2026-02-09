@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/branding">
+<file alias="banner">../neura-tools/graphics/branding/CoreSeed/assets/banner.png</file>
+<file alias="logo">../neura-tools/graphics/branding/CoreSeed/assets/logo.png</file>
+</qresource>
+</RCC>
