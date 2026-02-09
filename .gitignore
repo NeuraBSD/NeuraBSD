@@ -1,41 +1,14 @@
-# --- NeuraBSD Master Gitignore ---
-
-# Kompilate und Objekte (C/C++)
+# NeuraBSD Master Gitignore
 *.o
 *.obj
-*.so
-*.a
-*.lib
-*.dll
-*.exe
-*.out
-
-# Qt6 / Build-Systeme
-/build/
-/build-*/
-*.user
-.cmake/
-CMakeCache.txt
-CMakeFiles/
+*.core
+*.qcow2
+CoreSeed/CoreSeed
 Makefile
-*.pro.user
 moc_*.cpp
+moc_*.o
 qrc_*.cpp
 ui_*.h
-
-# System-spezifische Dateien
-.DS_Store
-Thumbs.db
-*.swp
-*~
-*.bak
-
-# NeuraBSD ISO & Release Artefakte
-/release/*.iso
-/release/*.img
-/release/staging/
-
-# Kernel & Boot (DaemonPath spezifisch)
-/sys/compile/
-/sys/arch/*/compile/
-CoreSeed/build/
+moc_predefs.h
+.qmake.stash
+*.user
