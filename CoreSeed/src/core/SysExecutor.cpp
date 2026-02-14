@@ -2,6 +2,6 @@
 #include "SysExecutor.hpp"
 
 SysExecutor::SysExecutor(QObject *parent) : QObject(parent) {
-// DE: Platzhalter für die Prozess-Logik.
-// EN: Placeholder for process logic.
+	// DE: Platzhalter für die Prozess-Logik.
+	// EN: Placeholder for process logic.
 }

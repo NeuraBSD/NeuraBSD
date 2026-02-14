@@ -5,14 +5,14 @@
 #include <QObject>
 
 /**
- * @class SysExecutor
- * @brief DE: Verwaltung von Systemprozessen (QProcess).
- * @brief EN: Management of system processes (QProcess).
- */
+* @class SysExecutor
+* @brief DE: Verwaltung von Systemprozessen (QProcess).
+* @brief EN: Management of system processes (QProcess).
+*/
 class SysExecutor : public QObject {
-Q_OBJECT
-public:
-explicit SysExecutor(QObject *parent = nullptr);
-};
+	Q_OBJECT
+	public:
+		explicit SysExecutor(QObject *parent = nullptr);
+	};
 
-#endif
+	#endif

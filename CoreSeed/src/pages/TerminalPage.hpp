@@ -5,9 +5,9 @@
 #include "InstallerPage.hpp"
 
 class TerminalPage : public InstallerPage {
-Q_OBJECT
-public:
-explicit TerminalPage(QWidget *parent = nullptr);
-};
+	Q_OBJECT
+	public:
+		explicit TerminalPage(QWidget *parent = nullptr);
+	};
 
-#endif
+	#endif

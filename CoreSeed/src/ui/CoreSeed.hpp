@@ -5,9 +5,9 @@
 #include <QWizard>
 
 class CoreSeed : public QWizard {
-Q_OBJECT
-public:
-explicit CoreSeed(QWidget *parent = nullptr);
-};
+	Q_OBJECT
+	public:
+		explicit CoreSeed(QWidget *parent = nullptr);
+	};
 
-#endif
+	#endif

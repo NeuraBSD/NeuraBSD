@@ -2,6 +2,6 @@
 #include "InstallerPage.hpp"
 
 InstallerPage::InstallerPage(QWidget *parent) : QWizardPage(parent) {
-// DE: Standard-Eigenschaften für alle Seiten.
-// EN: Default properties for all pages.
+	// DE: Standard-Eigenschaften für alle Seiten.
+	// EN: Default properties for all pages.
 }
