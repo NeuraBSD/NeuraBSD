@@ -22,3 +22,4 @@ PartitionPage::PartitionPage(QWidget *parent) : InstallerPage(parent) {
 
 	layout->addStretch();
 }
+/* Sync-Fix: Sat Feb 14 18:31:31 CET 2026 */
