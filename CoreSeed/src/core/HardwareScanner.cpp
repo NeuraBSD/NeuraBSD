@@ -1,55 +1,35 @@
-/* $NeuraBSD: CoreSeed/src/core/HardwareScanner.cpp, v 1.1 2026/02/08 CodeAkrobat Exp $ */
-/*
- * DE: Implementierung der Hardware-Abfrage via OpenBSD-Systembefehlen.
- * EN: Implementation of hardware queries via OpenBSD system commands.
- *
- * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
- * License: BSD 3-Clause
- */
-
+/* $NeuraBSD: CoreSeed/src/core/HardwareScanner.cpp, v 1.2 2026/02/14 CodeAkrobat Exp $ */
 #include "HardwareScanner.hpp"
 #include <QProcess>
-#include <QDebug>
+#include <QRegularExpression>
 
-HardwareScanner::HardwareScanner() {
-    // Initialisierung falls benötigt / Initialization if needed
+HardwareScanner::HardwareScanner(QObject *parent) : QObject(parent) {}
+
+QStringList HardwareScanner::getAvailableDisks() {
+QStringList disks;
+QProcess process;
+process.start("sysctl", QStringList() << "-n" << "hw.disknames");
+if (process.waitForFinished()) {
+QString output = QString::fromLocal8Bit(process.readAllStandardOutput()).trimmed();
+for (const QString &entry : output.split(",")) {
+QString name = entry.split(":").first();
+if (!name.isEmpty()) disks << name;
+}
+}
+return disks;
 }
 
-/**
- * WAS: CPU-Modell auslesen.
- * WIE: Aufruf von 'sysctl -n hw.model'.
- * WARUM: Um dem Benutzer anzuzeigen, auf welcher Hardware er installiert.
- */
-QString HardwareScanner::getCPUModel() {
-    QProcess process;
-    process.start("sysctl", QStringList() << "-n" << "hw.model");
-    if (!process.waitForFinished()) {
-        return "Unknown CPU";
-    }
-    return QString(process.readAllStandardOutput()).trimmed();
+QString HardwareScanner::getDiskSize(const QString &diskName) {
+QProcess process;
+process.start("disklabel", QStringList() << diskName);
+if (process.waitForFinished()) {
+QString output = QString::fromLocal8Bit(process.readAllStandardOutput());
+QRegularExpression re("total sectors: (\\d+)");
+auto match = re.match(output);
+if (match.hasMatch()) {
+long long sectors = match.captured(1).toLongLong();
+return QString::number((sectors * 512.0) / (1024.0 * 1024.0 * 1024.0), 'f', 1) + " GB";
 }
-
-/**
- * WAS: Festplattennamen ermitteln.
- * WIE: Abfrage von 'sysctl -n hw.disknames'.
- * WARUM: Identifikation der Zielmedien für die Installation.
- */
-QStringList HardwareScanner::getDisks() {
-    QProcess process;
-    process.start("sysctl", QStringList() << "-n" << "hw.disknames");
-    if (!process.waitForFinished()) {
-        return QStringList() << "No disks found";
-    }
-    
-    QString output = QString(process.readAllStandardOutput()).trimmed();
-    // OpenBSD liefert z.B. "sd0:xxxx,sd1:yyyy", wir splitten das:
-    QStringList rawList = output.split(",");
-    QStringList cleanList;
-    
-    for (const QString &entry : rawList) {
-        // Wir nehmen nur den Teil vor dem Doppelpunkt (z.B. sd0)
-        cleanList << entry.split(":").first();
-    }
-    
-    return cleanList;
+}
+return "0 GB";
 }

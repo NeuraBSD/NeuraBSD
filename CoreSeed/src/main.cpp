@@ -1,29 +1,16 @@
-/* $NeuraBSD: CoreSeed/src/main.cpp, v 2.6 2026/02/08 CodeAkrobat Exp $ */
-/*
- * DE: Hauptinstanz des grafischen Installers.
- * EN: Main instance of the graphical installer.
- *
- * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
- * License: BSD 3-Clause
- */
-
-#include <QApplication>
-#include "ui/CoreSeed.hpp"
-#include "pages/DiagnosticPage.hpp"
-#include "pages/PartitionPage.hpp"
-#include "pages/TerminalPage.hpp"
+/* $NeuraBSD: CoreSeed/src/main.cpp, v 1.5 2026/02/14 CodeAkrobat Exp $ */
+#include <QCoreApplication>
+#include <QDebug>
+#include "HardwareScanner.hpp"
 
 int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
-    
-    CoreSeed wizard;
-    wizard.setWindowTitle("NeuraBSD CoreSeed - Installation");
+QCoreApplication a(argc, argv);
+qDebug() << "--- NeuraBSD Hardware Reality-Check ---";
 
-    // Seiten-Reihenfolge (Modularer Aufbau)
-    wizard.addPage(new DiagnosticPage(&wizard)); // Schritt 1: HW-Check
-    wizard.addPage(new PartitionPage(&wizard));  // Schritt 2: Partitionierung
-    wizard.addPage(new TerminalPage(&wizard));   // Schritt 3: Profi-Konsole
+HardwareScanner scanner;
+for (const QString &disk : scanner.getAvailableDisks()) {
+qDebug() << "Disk:" << disk << "Size:" << scanner.getDiskSize(disk);
+}
 
-    wizard.show();
-    return app.exec();
+return 0;
 }

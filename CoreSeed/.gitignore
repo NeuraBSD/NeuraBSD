@@ -1,0 +1,17 @@
+# $NeuraBSD: .gitignore, v 1.0 2026/02/14 CodeAkrobat Exp $
+
+# Qt / Build Artefakte
+build/
+.qmake.stash
+Makefile
+CoreSeed
+core
+*.core
+*.o
+*.moc
+
+# OS spezifisch
+.DS_Store
+
+# QEMU / Test Images
+*.qcow2

@@ -1,31 +1,39 @@
-# $NeuraBSD: CoreSeed/CoreSeed.pro, v 3.0 2026/02/08 CodeAkrobat Exp $
-QT       += core gui widgets
-CONFIG   += c++2a
+# $NeuraBSD: CoreSeed.pro, v 1.4 2026/02/14 CodeAkrobat Exp $
+# DE: Projektkonfiguration für CoreSeed.
+# EN: Project configuration for CoreSeed.
 
-TARGET   = CoreSeed
+QT += core gui widgets
+CONFIG += c++2a
+
+TARGET = CoreSeed
 TEMPLATE = app
 
-# Build-Artefakte trennen / Separation of build artifacts
-OBJECTS_DIR = build/obj
-MOC_DIR     = build/moc
-UI_DIR      = build/ui
+# DE: Suchpfade für Header (Modularer Aufbau)
+# EN: Search paths for headers (Modular structure)
+INCLUDEPATH += src/core src/pages src/ui
 
-INCLUDEPATH += src src/ui src/core src/pages
-INCLUDEPATH += /usr/local/include/X11/qt6
-LIBS        += -L/usr/local/lib
+# DE: Header-Dateien (.hpp für C++ Standards)
+# EN: Header files (.hpp for C++ standards)
+HEADERS += src/core/HardwareScanner.hpp \
+src/core/SysExecutor.hpp \
+src/pages/DiagnosticPage.hpp \
+src/pages/PartitionPage.hpp \
+src/pages/TerminalPage.hpp \
+src/ui/CoreSeed.hpp \
+src/ui/InstallerPage.hpp
 
+# DE: Quellcodedateien
+# EN: Source files
 SOURCES += src/main.cpp \
-           src/ui/CoreSeed.cpp \
-           src/core/SysExecutor.cpp \
-           src/core/HardwareScanner.cpp \
-           src/pages/DiagnosticPage.cpp \
-           src/pages/TerminalPage.cpp \
-           src/pages/PartitionPage.cpp
+src/core/HardwareScanner.cpp \
+src/core/SysExecutor.cpp \
+src/pages/DiagnosticPage.cpp \
+src/pages/PartitionPage.cpp \
+src/pages/TerminalPage.cpp \
+src/ui/CoreSeed.cpp \
+src/ui/InstallerPage.cpp
 
-HEADERS += src/ui/CoreSeed.hpp \
-           src/ui/InstallerPage.hpp \
-           src/core/SysExecutor.hpp \
-           src/core/HardwareScanner.hpp \
-           src/pages/DiagnosticPage.hpp \
-           src/pages/TerminalPage.hpp \
-           src/pages/PartitionPage.hpp
+# DE: Build-Verzeichnisse sauber trennen
+# EN: Keep build directories clean
+MOC_DIR = build/moc
+OBJECTS_DIR = build/obj
