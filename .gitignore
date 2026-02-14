@@ -1,14 +1,29 @@
-# NeuraBSD Master Gitignore
+# $NeuraBSD: .gitignore, v 1.1 2026/02/14 CodeAkrobat Exp $
+# Global ignore file for NeuraBSD project
+
+# Compiled Object files & Binaries
 *.o
 *.obj
-*.core
-*.qcow2
-CoreSeed/CoreSeed
-Makefile
+*.a
+*.so
+
+# Qt / QMake generated files
 moc_*.cpp
-moc_*.o
-qrc_*.cpp
 ui_*.h
-moc_predefs.h
-.qmake.stash
-*.user
+qrc_*.cpp
+Makefile*
+*.qmake.stash
+coreseed-build/
+build-*/
+
+# Disk Images / VM Files
+*.qcow2
+*.img
+*.iso
+*.vmdk
+
+# OS & Editor artifacts
+.DS_Store
+.thumbnails
+*~
+*.swp
