@@ -1,7 +1,7 @@
-/* $NeuraBSD: CoreSeed/src/core/HardwareScanner.hpp, v 1.4 2026/02/14 CodeAkrobat Exp $ */
+/* $NeuraBSD: CoreSeed/src/core/HardwareScanner.hpp, v 1.2 2026/02/15 CodeAkrobat Exp $ */
 /*
-* DE: Definition der Hardware-Erkennung und Slice-Analyse.
-* EN: Definition of hardware detection and slice analysis.
+* DE: Erkennung der Hardware-Ressourcen (CPU, RAM, Disks).
+* EN: Detection of hardware resources (CPU, RAM, Disks).
 *
 * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
 * License: BSD 3-Clause
@@ -15,29 +15,39 @@
 
 /**
 * @class HardwareScanner
-* @brief DE: Scannt Festplatten und analysiert OpenBSD-Slices.
-* @brief EN: Scans disks and analyzes OpenBSD slices.
+* @brief DE: Klasse zur Hardware-Erkennung unter OpenBSD/NeuraBSD.
+* @brief EN: Class for hardware detection under OpenBSD/NeuraBSD.
 */
 class HardwareScanner : public QObject {
 	Q_OBJECT
 	public:
+		/**
+		* @brief DE: Standard-Konstruktor.
+		* @brief EN: Standard constructor.
+		* @param parent DE: Qt-Elternobjekt. EN: Qt parent object.
+		*/
 		explicit HardwareScanner(QObject *parent = nullptr);
 
 		/**
-		* @brief DE: Gibt eine Liste aller erkannten Festplatten zurück (z.B. sd0, wd0).
+		* @brief DE: Listet alle verfügbaren Festplatten auf.
+		* @brief EN: Lists all available hard drives.
+		* @return QStringList
 		*/
 		QStringList getAvailableDisks();
 
 		/**
-		* @brief DE: Ermittelt die Gesamtgröße einer Festplatte.
+		* @brief DE: Gibt Informationen zur CPU-Architektur zurück.
+		* @brief EN: Returns information about the CPU architecture.
+		* @return QString
 		*/
-		QString getDiskSize(const QString &diskName);
+		QString getCpuInfo();
 
 		/**
-		* @brief DE: Liest die Slices (a, b, d...) einer Disk aus dem disklabel.
-		* @brief EN: Reads the slices (a, b, d...) of a disk from disklabel.
+		* @brief DE: Ermittelt den gesamten Arbeitsspeicher in MB.
+		* @brief EN: Determines the total system memory in MB.
+		* @return long long
 		*/
-		QStringList getSlices(const QString &diskName);
+		long long getTotalMemoryMB();
 	};
 
-	#endif
+	#endif // HARDWARESCANNER_HPP
