@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['coreseed_0',['CoreSeed',['../classCoreSeed.html',1,'']]]
+  ['autoslicer_0',['AutoSlicer',['../classAutoSlicer.html',1,'']]],
+  ['autoslicervisualizer_1',['AutoSlicerVisualizer',['../classAutoSlicerVisualizer.html',1,'']]]
 ];

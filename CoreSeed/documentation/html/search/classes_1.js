@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['diagnosticpage_0',['DiagnosticPage',['../classDiagnosticPage.html',1,'']]]
+  ['coreseed_0',['CoreSeed',['../classCoreSeed.html',1,'']]]
 ];

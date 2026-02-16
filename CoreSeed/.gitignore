@@ -1,17 +1,25 @@
-# $NeuraBSD: .gitignore, v 1.0 2026/02/14 CodeAkrobat Exp $
+# $NeuraBSD: CoreSeed/.gitignore, v 1.0 2026/02/16 CodeAkrobat Exp $
+# DE: Git-Ignore für CoreSeed - Hält das Repo sauber.
+# EN: Git-Ignore for CoreSeed - Keeps the repo clean.
 
-# Qt / Build Artefakte
-build/
-.qmake.stash
-Makefile
-CoreSeed
-core
+# Binaries & Executables
+coreseed
 *.core
+core
+
+# Qt / Build-System Artefakte
 *.o
-*.moc
+moc_*.cpp
+moc_predefs.h
+qrc_resources.cpp
+Makefile
+.qmake.stash
 
-# OS spezifisch
+# Doxygen Dokumentation (Wird lokal generiert, nicht im Repo benötigt)
+# DE: Die HTML/Latex Flut wird ignoriert.
+documentation/doxygen/html/
+documentation/doxygen/latex/
+
+# Betriebssystem-Spezifisches
 .DS_Store
-
-# QEMU / Test Images
-*.qcow2
+.Thumbs.db

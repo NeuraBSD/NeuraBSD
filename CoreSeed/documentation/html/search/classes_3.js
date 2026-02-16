@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['installerpage_0',['InstallerPage',['../classInstallerPage.html',1,'']]]
+  ['hardwarescanner_0',['HardwareScanner',['../classHardwareScanner.html',1,'']]]
 ];

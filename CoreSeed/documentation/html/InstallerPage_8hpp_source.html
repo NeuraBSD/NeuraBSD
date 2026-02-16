@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: src/ui/InstallerPage.hpp Quellcode</title>
+<title>CoreSeed Installer: src/ui/InstallerPage.hpp Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -92,41 +91,37 @@ $(function(){initNavTree('InstallerPage_8hpp_source.html','',''); });
   <div class="headertitle"><div class="title">InstallerPage.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="InstallerPage_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* $NeuraBSD: CoreSeed/src/ui/InstallerPage.hpp, v 1.1 2026/02/08 CodeAkrobat Exp $ */</span></div>
+<a href="InstallerPage_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* $NeuraBSD: CoreSeed/src/ui/InstallerPage.hpp, v 1.2 2026/02/15 CodeAkrobat Exp $ */</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * DE: Basis-Interface für NeuraBSD Installer-Seiten.</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * EN: Base interface for NeuraBSD installer pages.</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * License: BSD 3-Clause</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* DE: Basisklasse für alle Installer-Seiten.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">* EN: Base class for all installer pages.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">*</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">* Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">* License: BSD 3-Clause</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef INSTALLERPAGE_HPP</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define INSTALLERPAGE_HPP</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QWizardPage&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classInstallerPage.html">   21</a></span><span class="keyword">class </span><a class="code hl_function" href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage</a> : <span class="keyword">public</span> QWizardPage {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Q_OBJECT</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">   24</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage</a>(QWidget *parent = <span class="keyword">nullptr</span>) : QWizardPage(parent) {}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classInstallerPage.html#a47cb31a4dbbc36345f8c052e0d3aa72a">   29</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classInstallerPage.html#a47cb31a4dbbc36345f8c052e0d3aa72a">onEnter</a>() {}</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classInstallerPage.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage</a> : <span class="keyword">public</span> QWizardPage {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Q_OBJECT</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classInstallerPage.html#a520163f491a1f55029165856d949632d">   25</a></span>        <span class="keyword">virtual</span> <a class="code hl_function" href="classInstallerPage.html#a520163f491a1f55029165856d949632d">~InstallerPage</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classInstallerPage.html#ad38850815d022377a1a7cca1c051f917">setPageTitle</a>(<span class="keyword">const</span> QString &amp;title);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    };</div>
+</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">protected</span>:</div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classInstallerPage.html#a7858f321a18c601e1ad9ee5c3ec26cfb">   35</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classInstallerPage.html#a7858f321a18c601e1ad9ee5c3ec26cfb">initializePage</a>()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_function" href="classInstallerPage.html#a47cb31a4dbbc36345f8c052e0d3aa72a">onEnter</a>();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
-</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
-</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassInstallerPage_html_a47cb31a4dbbc36345f8c052e0d3aa72a"><div class="ttname"><a href="classInstallerPage.html#a47cb31a4dbbc36345f8c052e0d3aa72a">InstallerPage::onEnter</a></div><div class="ttdeci">virtual void onEnter()</div><div class="ttdoc">Virtuelle Methode, die aufgerufen wird, wenn die Seite aktiv wird.</div><div class="ttdef"><b>Definition</b> InstallerPage.hpp:29</div></div>
-<div class="ttc" id="aclassInstallerPage_html_a7858f321a18c601e1ad9ee5c3ec26cfb"><div class="ttname"><a href="classInstallerPage.html#a7858f321a18c601e1ad9ee5c3ec26cfb">InstallerPage::initializePage</a></div><div class="ttdeci">void initializePage() override</div><div class="ttdoc">Überschreibt die Qt-interne Methode, um onEnter zu triggern.</div><div class="ttdef"><b>Definition</b> InstallerPage.hpp:35</div></div>
-<div class="ttc" id="aclassInstallerPage_html_ac56af21018379d1c0b8248f0ffff421b"><div class="ttname"><a href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage::InstallerPage</a></div><div class="ttdeci">InstallerPage(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> InstallerPage.hpp:24</div></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">    #endif </span><span class="comment">// INSTALLERPAGE_HPP</span></div>
+<div class="ttc" id="aclassInstallerPage_html_a520163f491a1f55029165856d949632d"><div class="ttname"><a href="classInstallerPage.html#a520163f491a1f55029165856d949632d">InstallerPage::~InstallerPage</a></div><div class="ttdeci">virtual ~InstallerPage()=default</div></div>
+<div class="ttc" id="aclassInstallerPage_html_ac56af21018379d1c0b8248f0ffff421b"><div class="ttname"><a href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage::InstallerPage</a></div><div class="ttdeci">InstallerPage(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> InstallerPage.cpp:13</div></div>
+<div class="ttc" id="aclassInstallerPage_html_ad38850815d022377a1a7cca1c051f917"><div class="ttname"><a href="classInstallerPage.html#ad38850815d022377a1a7cca1c051f917">InstallerPage::setPageTitle</a></div><div class="ttdeci">void setPageTitle(const QString &amp;title)</div><div class="ttdef"><b>Definition</b> InstallerPage.cpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

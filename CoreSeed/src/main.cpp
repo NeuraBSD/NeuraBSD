@@ -1,55 +1,65 @@
-/* $NeuraBSD: CoreSeed/src/main.cpp, v 1.3 2026/02/15 CodeAkrobat Exp $ */
+/* $NeuraBSD: CoreSeed/src/main.cpp, v 1.3 2026/02/16 CodeAkrobat Exp $ */
 /*
-* DE: Hauptinstanz des grafischen Installers - Simulation der Partitionierung.
-* EN: Main instance of the graphical installer - Partitioning simulation.
-*
-* Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
-* License: BSD 3-Clause
-*/
+ * DE: Hardware-Audit mit Kapazitaetsberechnung.
+ * EN: Hardware audit with capacity calculation.
+ *
+ * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
+ * License: BSD 3-Clause
+ */
 
 #include <QCoreApplication>
+#include <QProcess>
 #include <QDebug>
 #include <iostream>
-#include "core/AutoSlicer.hpp"
+#include <cmath>
 
 /**
-* @brief DE: Simuliert die Partitionierung für eine gegebene Festplattengröße.
-* @brief EN: Simulates partitioning for a given disk size.
-* @param sizeGB Die Größe der fiktiven Festplatte in Gigabyte.
-*/
-void simulate(long long sizeGB) {
-	qDebug() << "-------------------------------------------------------";
-	qDebug() << "NeuraBSD AutoSlicer Simulation für:" << sizeGB << "GB";
-	qDebug() << "-------------------------------------------------------";
+ * @brief DE: Ermittelt die Groesse eines Laufwerks via disklabel.
+ * @brief EN: Determines the size of a drive via disklabel.
+ */
+double getDiskSizeGB(const QString& diskName) {
+QProcess disklabel;
+// Wir fragen nur die Geometrie ab (-g)
+disklabel.start("disklabel", QStringList() << diskName);
+if (!disklabel.waitForFinished()) return 0.0;
 
-	AutoSlicer slicer(sizeGB * 1024); // Umrechnung in MB
-	slicer.calculateLayout();
+QString output = QString::fromLocal8Bit(disklabel.readAllStandardOutput());
+// Wir suchen die Zeile mit 'total sectors:'
+QStringList lines = output.split('\n');
+long long sectors = 0;
 
-	for (const auto& slice : slicer.getLayout()) {
-		double sizeInGB = slice.sizeMB / 1024.0;
-		QString output = QString("%1: %2 GB \t(%3)")
-		.arg(slice.mountPoint, -10)
-		.arg(QString::number(sizeInGB, 'f', 2), 8)
-		.arg(slice.description);
-		qDebug() << output.toUtf8().constData();
-	}
-	qDebug() << "";
+for (const QString& line : lines) {
+if (line.contains("total sectors:")) {
+sectors = line.section(':', 1).trimmed().toLongLong();
+break;
+}
 }
 
-/**
-* @brief DE: Einstiegspunkt zur Validierung der Slicer-Logik.
-* @brief EN: Entry point for slicer logic validation.
-*/
+/* Berechnung: Sektoren * 512 Bytes / 1024^3 */
+return std::round((sectors * 512.0) / (1024.0 * 1024.0 * 1024.0));
+}
+
+void performHardwareAudit() {
+std::cout << "\n[CoreSeed] Starte erweitertes Hardware-Audit..." << std::endl;
+
+QProcess sysctl;
+sysctl.start("sysctl", QStringList() << "hw.disknames");
+sysctl.waitForFinished();
+
+QString output = QString::fromLocal8Bit(sysctl.readAllStandardOutput()).trimmed();
+QStringList devices = output.section('=', 1).split(',', Qt::SkipEmptyParts);
+
+for (const QString& device : devices) {
+QString diskName = device.section(':', 0, 0).trimmed();
+double size = getDiskSizeGB(diskName);
+std::cout << " -> " << diskName.toStdString() << " [" << size << " GB] [BEREIT]" << std::endl;
+}
+std::cout << "[CoreSeed] Audit abgeschlossen.\n" << std::endl;
+}
+
 int main(int argc, char *argv[]) {
-	QCoreApplication app(argc, argv);
-	app.setApplicationName("CoreSeed-Simulator");
-
-	// Testläufe für verschiedene Szenarien
-	simulate(128);  // Kleiner Laptop / SSD
-	simulate(512);  // Moderne Workstation
-	simulate(2048); // High-End Storage / NVMe (2TB)
-
-	qDebug() << "Simulation beendet. Sind die Proportionen korrekt?";
-
-	return 0;
+qputenv("QT_QPA_PLATFORM", "offscreen");
+QCoreApplication app(argc, argv);
+performHardwareAudit();
+return 0;
 }

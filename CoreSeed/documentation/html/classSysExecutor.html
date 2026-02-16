@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: SysExecutor Klassenreferenz</title>
+<title>CoreSeed Installer: SysExecutor Klassenreferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -93,21 +92,47 @@ $(function(){initNavTree('classSysExecutor.html','','classSysExecutor-members');
 </div><!--header-->
 <div class="contents">
 
-<p>Führt Befehle mit Root-Rechten aus.  
+<p>DE: Führt die physische Partitionierung auf dem Zielsystem aus.  
  <a href="#details">Mehr ...</a></p>
 
 <p><code>#include &lt;<a class="el" href="SysExecutor_8hpp_source.html">SysExecutor.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Klassendiagramm für SysExecutor:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classSysExecutor.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Öffentliche, statische Methoden</h2></td></tr>
-<tr class="memitem:aadca8e660ff9fe93637231a429148975" id="r_aadca8e660ff9fe93637231a429148975"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadca8e660ff9fe93637231a429148975">executeAsRoot</a> (const QString &amp;cmd, const QStringList &amp;args)</td></tr>
-<tr class="memdesc:aadca8e660ff9fe93637231a429148975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Führt einen Befehl via doas aus.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
+Signale</h2></td></tr>
+<tr class="memitem:a0da19eb7b817d686f27fca7103c47e67" id="r_a0da19eb7b817d686f27fca7103c47e67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0da19eb7b817d686f27fca7103c47e67">logMessage</a> (const QString &amp;msg)</td></tr>
+<tr class="memdesc:a0da19eb7b817d686f27fca7103c47e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Signal zur Ausgabe von Statusmeldungen an die UI.  <br /></td></tr>
+<tr class="memitem:ae8d0dcb2b1e745440abacef46010c038" id="r_ae8d0dcb2b1e745440abacef46010c038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8d0dcb2b1e745440abacef46010c038">progressUpdate</a> (int percent)</td></tr>
+<tr class="memdesc:ae8d0dcb2b1e745440abacef46010c038"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Signal zur Aktualisierung des Fortschrittsbalkens (0-100%).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:aaade0f7b578e9b25eea1e26981a13750" id="r_aaade0f7b578e9b25eea1e26981a13750"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaade0f7b578e9b25eea1e26981a13750">SysExecutor</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:aaade0f7b578e9b25eea1e26981a13750"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Standard-Konstruktor.  <br /></td></tr>
+<tr class="memitem:a57a885b84bb3b9926fcd7ee69fa41761" id="r_a57a885b84bb3b9926fcd7ee69fa41761"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57a885b84bb3b9926fcd7ee69fa41761">applyPartitioning</a> (const QString &amp;disk, const QVector&lt; <a class="el" href="structAutoSlicerVisualizer_1_1SliceInfo.html">AutoSlicerVisualizer::SliceInfo</a> &gt; &amp;slices)</td></tr>
+<tr class="memdesc:a57a885b84bb3b9926fcd7ee69fa41761"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Wendet die Partitionierungs-Logik auf eine Festplatte an.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attribute</h2></td></tr>
+<tr class="memitem:a8a181d13dd5361699d318e500f922bf6" id="r_a8a181d13dd5361699d318e500f922bf6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a181d13dd5361699d318e500f922bf6">m_dryRun</a> = true</td></tr>
+<tr class="memdesc:a8a181d13dd5361699d318e500f922bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Sicherheits-Flag. Wenn true, werden Befehle nur simuliert.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Führt Befehle mit Root-Rechten aus. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="aadca8e660ff9fe93637231a429148975" name="aadca8e660ff9fe93637231a429148975"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadca8e660ff9fe93637231a429148975">&#9670;&#160;</a></span>executeAsRoot()</h2>
+<div class="textblock"><p>DE: Führt die physische Partitionierung auf dem Zielsystem aus. </p>
+<p>EN: Executes the physical partitioning on the target system.</p><ul>
+<li></li>
+</ul>
+<p>DE: Diese Klasse ist verantwortlich für die Transformation der grafischen Partitionswünsche in reale OpenBSD-Systembefehle. Sie steuert den Prozess von der MBR-Initialisierung (fdisk) über das Slicing (disklabel) bis hin zur Dateisystem-Erstellung (newfs).</p><ul>
+<li>EN: This class is responsible for transforming graphical partitioning requests into real OpenBSD system commands. It controls the process from MBR initialization (fdisk) to slicing (disklabel) and filesystem creation (newfs). </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a id="aaade0f7b578e9b25eea1e26981a13750" name="aaade0f7b578e9b25eea1e26981a13750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaade0f7b578e9b25eea1e26981a13750">&#9670;&#160;</a></span>SysExecutor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,32 +141,159 @@ $(function(){initNavTree('classSysExecutor.html','','classSysExecutor-members');
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool SysExecutor::executeAsRoot </td>
+          <td class="memname">SysExecutor::SysExecutor </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
           <td></td>
-          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Führt einen Befehl via doas aus. </p>
-<dl class="params"><dt>Parameter</dt><dd>
+<p>DE: Standard-Konstruktor. </p>
+<p>DE: Konstruktor des SysExecutors.</p>
+<p>EN: Default constructor.</p>
+<p>EN: Constructor of the <a class="el" href="classSysExecutor.html" title="DE: Führt die physische Partitionierung auf dem Zielsystem aus.">SysExecutor</a>. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="a57a885b84bb3b9926fcd7ee69fa41761" name="a57a885b84bb3b9926fcd7ee69fa41761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a885b84bb3b9926fcd7ee69fa41761">&#9670;&#160;</a></span>applyPartitioning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SysExecutor::applyPartitioning </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>disk</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector&lt; <a class="el" href="structAutoSlicerVisualizer_1_1SliceInfo.html">AutoSlicerVisualizer::SliceInfo</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>slices</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DE: Wendet die Partitionierungs-Logik auf eine Festplatte an. </p>
+<p>EN: Applies the partitioning logic to a disk.</p><ul>
+<li><dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cmd</td><td>Der Befehl (z.B. "disklabel") </td></tr>
-    <tr><td class="paramname">args</td><td>Die Argumente </td></tr>
+    <tr><td class="paramname">disk</td><td>DE: Gerätename der Zielfestplatte (z.B. "sd0"). EN: Device name of the target disk (e.g., "sd0"). </td></tr>
+    <tr><td class="paramname">slices</td><td>DE: Vector mit den berechneten Slice-Informationen vom <a class="el" href="classAutoSlicer.html" title="DE: Berechnet dynamisch die Partitionierung basierend auf der Disk-Größe.">AutoSlicer</a>. EN: Vector containing calculated slice information from <a class="el" href="classAutoSlicer.html" title="DE: Berechnet dynamisch die Partitionierung basierend auf der Disk-Größe.">AutoSlicer</a>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>true wenn erfolgreich. </dd></dl>
+</li>
+<li><dl class="section return"><dt>Rückgabe</dt><dd>bool DE: True bei Erfolg oder erfolgreichem Dry-Run. EN: True on success or successful dry-run.</dd></dl>
+DE: Die Methode führt eine sequentielle Befehlskette aus:</li>
+</ul>
+<ol type="1">
+<li>Initialisierung des Master Boot Record (MBR) via 'fdisk -iy'.</li>
+<li>Vorbereitung des OpenBSD-Disklabels basierend auf AutoSlicer-Daten.</li>
+<li>Logischer Durchlauf der Formatierung (newfs).</li>
+</ol>
+<ul>
+<li>EN: The method executes a sequential chain of commands:</li>
+</ul>
+<ol type="1">
+<li>Master Boot Record (MBR) initialization via 'fdisk -iy'.</li>
+<li>Preparation of the OpenBSD disklabel based on <a class="el" href="classAutoSlicer.html" title="DE: Berechnet dynamisch die Partitionierung basierend auf der Disk-Größe.">AutoSlicer</a> data.</li>
+<li>Logical pass of formatting (newfs). </li>
+</ol>
+
+</div>
+</div>
+<a id="a0da19eb7b817d686f27fca7103c47e67" name="a0da19eb7b817d686f27fca7103c47e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da19eb7b817d686f27fca7103c47e67">&#9670;&#160;</a></span>logMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SysExecutor::logMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DE: Signal zur Ausgabe von Statusmeldungen an die UI. </p>
+<p>EN: Signal for outputting status messages to the UI. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>DE: Die zu protokollierende Nachricht. EN: The message to be logged. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8d0dcb2b1e745440abacef46010c038" name="ae8d0dcb2b1e745440abacef46010c038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d0dcb2b1e745440abacef46010c038">&#9670;&#160;</a></span>progressUpdate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SysExecutor::progressUpdate </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>percent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DE: Signal zur Aktualisierung des Fortschrittsbalkens (0-100%). </p>
+<p>EN: Signal for updating the progress bar (0-100%). </p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Dokumentation der Datenelemente</h2>
+<a id="a8a181d13dd5361699d318e500f922bf6" name="a8a181d13dd5361699d318e500f922bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a181d13dd5361699d318e500f922bf6">&#9670;&#160;</a></span>m_dryRun</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SysExecutor::m_dryRun = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DE: Sicherheits-Flag. Wenn true, werden Befehle nur simuliert. </p>
+<p>EN: Safety flag. If true, commands are only simulated. </p>
 
 </div>
 </div>

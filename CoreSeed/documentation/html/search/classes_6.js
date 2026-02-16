@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['terminalpage_0',['TerminalPage',['../classTerminalPage.html',1,'']]]
+  ['partitionpage_0',['PartitionPage',['../classPartitionPage.html',1,'']]]
 ];

@@ -1,17 +1,13 @@
-/* $NeuraBSD: CoreSeed/src/ui/InstallerPage.cpp, v 1.2 2026/02/15 CodeAkrobat Exp $ */
+/* $NeuraBSD: CoreSeed/src/ui/InstallerPage.cpp, v 1.2 2026/02/16 CodeAkrobat Exp $ */
 /*
-* DE: Implementierung der Basisklasse für Installer-Seiten.
-* EN: Implementation of the base class for installer pages.
-*
-* Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
-* License: BSD 3-Clause
-*/
+ * DE: Implementierung der Basisklasse für Installer-Seiten.
+ * EN: Implementation of the base class for installer pages.
+ *
+ * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
+ * License: BSD 3-Clause
+ */
 
 #include "ui/InstallerPage.hpp"
-#include <QVBoxLayout>
 
-InstallerPage::InstallerPage(QWidget *parent) : QWizardPage(parent) {}
-
-void InstallerPage::setPageTitle(const QString &title) {
-	setTitle(title);
-}
+// DE: Aktuell sind alle Methoden inline im Header definiert.
+// EN: Currently all methods are defined inline in the header.

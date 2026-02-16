@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: src/core/SysExecutor.hpp Quellcode</title>
+<title>CoreSeed Installer: src/core/SysExecutor.hpp Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -92,36 +91,49 @@ $(function(){initNavTree('SysExecutor_8hpp_source.html','',''); });
   <div class="headertitle"><div class="title">SysExecutor.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="SysExecutor_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* $NeuraBSD: CoreSeed/src/core/SysExecutor.hpp, v 1.0 2026/02/08 CodeAkrobat Exp $ */</span></div>
+<a href="SysExecutor_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* $NeuraBSD: CoreSeed/src/core/SysExecutor.hpp, v 1.2 2026/02/16 CodeAkrobat Exp $ */</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * DE: Kapselung von Systembefehlen via doas.</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * EN: Encapsulation of system commands via doas.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * DE: Schnittstelle zur Ausführung von Systembefehlen (fdisk, disklabel).</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * EN: Interface for executing system commands (fdisk, disklabel).</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * WAS: Führt privilegierte Befehle auf OpenBSD aus.</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * WIE: Nutzt QProcess zur Interaktion mit /usr/bin/doas.</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * WARUM: Sicherheit durch gezielte Rechteeskalation.</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * License: BSD 3-Clause</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef SYSEXECUTOR_HPP</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define SYSEXECUTOR_HPP</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;QProcess&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classSysExecutor.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classSysExecutor.html">SysExecutor</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classSysExecutor.html#aadca8e660ff9fe93637231a429148975">executeAsRoot</a>(<span class="keyword">const</span> QString &amp;cmd, <span class="keyword">const</span> QStringList &amp;args);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * License: BSD 3-Clause</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef SYSEXECUTOR_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define SYSEXECUTOR_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="AutoSlicerVisualizer_8hpp.html">ui/AutoSlicerVisualizer.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classSysExecutor.html">   30</a></span><span class="keyword">class </span><a class="code hl_function" href="classSysExecutor.html#aaade0f7b578e9b25eea1e26981a13750">SysExecutor</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_OBJECT</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classSysExecutor.html#aaade0f7b578e9b25eea1e26981a13750">SysExecutor</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSysExecutor.html#a57a885b84bb3b9926fcd7ee69fa41761">applyPartitioning</a>(<span class="keyword">const</span> QString &amp;disk, <span class="keyword">const</span> QVector&lt;AutoSlicerVisualizer::SliceInfo&gt; &amp;slices);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>signals:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classSysExecutor.html#a0da19eb7b817d686f27fca7103c47e67">   58</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classSysExecutor.html#a0da19eb7b817d686f27fca7103c47e67">logMessage</a>(<span class="keyword">const</span> QString &amp;msg);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classSysExecutor.html#ae8d0dcb2b1e745440abacef46010c038">   64</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classSysExecutor.html#ae8d0dcb2b1e745440abacef46010c038">progressUpdate</a>(<span class="keywordtype">int</span> percent);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classSysExecutor.html#a8a181d13dd5361699d318e500f922bf6">   71</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classSysExecutor.html#a8a181d13dd5361699d318e500f922bf6">m_dryRun</a> = <span class="keyword">true</span>; </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassSysExecutor_html"><div class="ttname"><a href="classSysExecutor.html">SysExecutor</a></div><div class="ttdoc">Führt Befehle mit Root-Rechten aus.</div><div class="ttdef"><b>Definition</b> SysExecutor.hpp:25</div></div>
-<div class="ttc" id="aclassSysExecutor_html_aadca8e660ff9fe93637231a429148975"><div class="ttname"><a href="classSysExecutor.html#aadca8e660ff9fe93637231a429148975">SysExecutor::executeAsRoot</a></div><div class="ttdeci">static bool executeAsRoot(const QString &amp;cmd, const QStringList &amp;args)</div><div class="ttdoc">Führt einen Befehl via doas aus.</div><div class="ttdef"><b>Definition</b> SysExecutor.cpp:4</div></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">// SYSEXECUTOR_HPP</span></div>
+<div class="ttc" id="aAutoSlicerVisualizer_8hpp_html"><div class="ttname"><a href="AutoSlicerVisualizer_8hpp.html">AutoSlicerVisualizer.hpp</a></div></div>
+<div class="ttc" id="aclassSysExecutor_html_a0da19eb7b817d686f27fca7103c47e67"><div class="ttname"><a href="classSysExecutor.html#a0da19eb7b817d686f27fca7103c47e67">SysExecutor::logMessage</a></div><div class="ttdeci">void logMessage(const QString &amp;msg)</div><div class="ttdoc">DE: Signal zur Ausgabe von Statusmeldungen an die UI.</div></div>
+<div class="ttc" id="aclassSysExecutor_html_a57a885b84bb3b9926fcd7ee69fa41761"><div class="ttname"><a href="classSysExecutor.html#a57a885b84bb3b9926fcd7ee69fa41761">SysExecutor::applyPartitioning</a></div><div class="ttdeci">bool applyPartitioning(const QString &amp;disk, const QVector&lt; AutoSlicerVisualizer::SliceInfo &gt; &amp;slices)</div><div class="ttdoc">DE: Wendet die Partitionierungs-Logik auf eine Festplatte an.</div><div class="ttdef"><b>Definition</b> SysExecutor.cpp:29</div></div>
+<div class="ttc" id="aclassSysExecutor_html_a8a181d13dd5361699d318e500f922bf6"><div class="ttname"><a href="classSysExecutor.html#a8a181d13dd5361699d318e500f922bf6">SysExecutor::m_dryRun</a></div><div class="ttdeci">bool m_dryRun</div><div class="ttdoc">DE: Sicherheits-Flag. Wenn true, werden Befehle nur simuliert.</div><div class="ttdef"><b>Definition</b> SysExecutor.hpp:71</div></div>
+<div class="ttc" id="aclassSysExecutor_html_aaade0f7b578e9b25eea1e26981a13750"><div class="ttname"><a href="classSysExecutor.html#aaade0f7b578e9b25eea1e26981a13750">SysExecutor::SysExecutor</a></div><div class="ttdeci">SysExecutor(QObject *parent=nullptr)</div><div class="ttdoc">DE: Standard-Konstruktor.</div><div class="ttdef"><b>Definition</b> SysExecutor.cpp:17</div></div>
+<div class="ttc" id="aclassSysExecutor_html_ae8d0dcb2b1e745440abacef46010c038"><div class="ttname"><a href="classSysExecutor.html#ae8d0dcb2b1e745440abacef46010c038">SysExecutor::progressUpdate</a></div><div class="ttdeci">void progressUpdate(int percent)</div><div class="ttdoc">DE: Signal zur Aktualisierung des Fortschrittsbalkens (0-100%).</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

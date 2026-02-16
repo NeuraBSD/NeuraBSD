@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: InstallerPage Klassenreferenz</title>
+<title>CoreSeed Installer: InstallerPage Klassenreferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -93,7 +92,7 @@ $(function(){initNavTree('classInstallerPage.html','','classInstallerPage-member
 </div><!--header-->
 <div class="contents">
 
-<p>Basisklasse für alle Seiten des <a class="el" href="classCoreSeed.html" title="Der Haupt-Wizard für die Installation.">CoreSeed</a> Wizards.  
+<p>DE: Abstrakte Basisklasse für ein einheitliches Layout der Seiten.  
  <a href="#details">Mehr ...</a></p>
 
 <p><code>#include &lt;<a class="el" href="InstallerPage_8hpp_source.html">InstallerPage.hpp</a>&gt;</code></p>
@@ -103,28 +102,24 @@ Klassendiagramm für InstallerPage:</div>
  <div class="center">
   <img src="classInstallerPage.png" usemap="#InstallerPage_map" alt=""/>
   <map id="InstallerPage_map" name="InstallerPage_map">
-<area href="classDiagnosticPage.html" title="Seite zur Anzeige der Systemressourcen." alt="DiagnosticPage" shape="rect" coords="0,112,100,136"/>
-<area href="classPartitionPage.html" title="Seite zur Auswahl des Installationsziels." alt="PartitionPage" shape="rect" coords="110,112,210,136"/>
-<area href="classTerminalPage.html" title="Implementiert den Profi-Modus von CoreSeed." alt="TerminalPage" shape="rect" coords="220,112,320,136"/>
+<area href="classDiagnosticPage.html" title="DE: Zeigt Hardware-Informationen vor der Installation an." alt="DiagnosticPage" shape="rect" coords="0,112,100,136"/>
+<area href="classPartitionPage.html" title="DE: Seite zur Konfiguration der Festplattenpartitionen. EN: Page for configuring disk partitions." alt="PartitionPage" shape="rect" coords="110,112,210,136"/>
+<area href="classTerminalPage.html" title="DE: Zeigt den Output des Installationsprozesses an." alt="TerminalPage" shape="rect" coords="220,112,320,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:ac56af21018379d1c0b8248f0ffff421b" id="r_ac56af21018379d1c0b8248f0ffff421b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac56af21018379d1c0b8248f0ffff421b">InstallerPage</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="memitem:a47cb31a4dbbc36345f8c052e0d3aa72a" id="r_a47cb31a4dbbc36345f8c052e0d3aa72a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47cb31a4dbbc36345f8c052e0d3aa72a">onEnter</a> ()</td></tr>
-<tr class="memdesc:a47cb31a4dbbc36345f8c052e0d3aa72a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtuelle Methode, die aufgerufen wird, wenn die Seite aktiv wird.  <br /></td></tr>
+<tr class="memitem:a520163f491a1f55029165856d949632d" id="r_a520163f491a1f55029165856d949632d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a520163f491a1f55029165856d949632d">~InstallerPage</a> ()=default</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Geschützte Methoden</h2></td></tr>
-<tr class="memitem:a7858f321a18c601e1ad9ee5c3ec26cfb" id="r_a7858f321a18c601e1ad9ee5c3ec26cfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7858f321a18c601e1ad9ee5c3ec26cfb">initializePage</a> () override</td></tr>
-<tr class="memdesc:a7858f321a18c601e1ad9ee5c3ec26cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überschreibt die Qt-interne Methode, um onEnter zu triggern.  <br /></td></tr>
+<tr class="memitem:ad38850815d022377a1a7cca1c051f917" id="r_ad38850815d022377a1a7cca1c051f917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad38850815d022377a1a7cca1c051f917">setPageTitle</a> (const QString &amp;title)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Basisklasse für alle Seiten des <a class="el" href="classCoreSeed.html" title="Der Haupt-Wizard für die Installation.">CoreSeed</a> Wizards. </p>
-<ul>
-<li>DE: Erbt von QWizardPage, um die Integration in den Wizard zu ermöglichen. EN: Inherits from QWizardPage to allow integration into the wizard. </li>
-</ul>
+<div class="textblock"><p>DE: Abstrakte Basisklasse für ein einheitliches Layout der Seiten. </p>
+<p>EN: Abstract base class for a consistent page layout. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a id="ac56af21018379d1c0b8248f0ffff421b" name="ac56af21018379d1c0b8248f0ffff421b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac56af21018379d1c0b8248f0ffff421b">&#9670;&#160;</a></span>InstallerPage()</h2>
@@ -144,7 +139,32 @@ Geschützte Methoden</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a520163f491a1f55029165856d949632d" name="a520163f491a1f55029165856d949632d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a520163f491a1f55029165856d949632d">&#9670;&#160;</a></span>~InstallerPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual InstallerPage::~InstallerPage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -152,8 +172,8 @@ Geschützte Methoden</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="a7858f321a18c601e1ad9ee5c3ec26cfb" name="a7858f321a18c601e1ad9ee5c3ec26cfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7858f321a18c601e1ad9ee5c3ec26cfb">&#9670;&#160;</a></span>initializePage()</h2>
+<a id="ad38850815d022377a1a7cca1c051f917" name="ad38850815d022377a1a7cca1c051f917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad38850815d022377a1a7cca1c051f917">&#9670;&#160;</a></span>setPageTitle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,54 +182,24 @@ Geschützte Methoden</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void InstallerPage::initializePage </td>
+          <td class="memname">void InstallerPage::setPageTitle </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Überschreibt die Qt-interne Methode, um onEnter zu triggern. </p>
-
 </div>
 </div>
-<a id="a47cb31a4dbbc36345f8c052e0d3aa72a" name="a47cb31a4dbbc36345f8c052e0d3aa72a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47cb31a4dbbc36345f8c052e0d3aa72a">&#9670;&#160;</a></span>onEnter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void InstallerPage::onEnter </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Virtuelle Methode, die aufgerufen wird, wenn die Seite aktiv wird. </p>
-
-<p>Erneute Implementation in <a class="el" href="classDiagnosticPage.html#ad7cffd0ff7741748a2e61074518252eb">DiagnosticPage</a>, <a class="el" href="classPartitionPage.html#a2fcd31f19fe890fe85bf8affa40e9054">PartitionPage</a> und <a class="el" href="classTerminalPage.html#a9948566528bc8f931433e9b69d103b8f">TerminalPage</a>.</p>
-
-</div>
-</div>
-<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
 <li>src/ui/<a class="el" href="InstallerPage_8hpp_source.html">InstallerPage.hpp</a></li>
+<li>src/ui/<a class="el" href="InstallerPage_8cpp.html">InstallerPage.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

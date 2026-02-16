@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: PartitionPage Klassenreferenz</title>
+<title>CoreSeed Installer: PartitionPage Klassenreferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -93,7 +92,7 @@ $(function(){initNavTree('classPartitionPage.html','','classPartitionPage-member
 </div><!--header-->
 <div class="contents">
 
-<p>Seite zur Auswahl des Installationsziels.  
+<p>DE: Seite zur Konfiguration der Festplattenpartitionen. EN: Page for configuring disk partitions.  
  <a href="#details">Mehr ...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PartitionPage_8hpp_source.html">PartitionPage.hpp</a>&gt;</code></p>
@@ -103,31 +102,42 @@ Klassendiagramm für PartitionPage:</div>
  <div class="center">
   <img src="classPartitionPage.png" usemap="#PartitionPage_map" alt=""/>
   <map id="PartitionPage_map" name="PartitionPage_map">
-<area href="classInstallerPage.html" title="Basisklasse für alle Seiten des CoreSeed Wizards." alt="InstallerPage" shape="rect" coords="0,56,90,80"/>
+<area href="classInstallerPage.html" title="DE: Abstrakte Basisklasse für ein einheitliches Layout der Seiten." alt="InstallerPage" shape="rect" coords="0,56,90,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
 <tr class="memitem:a0d12fa168dd41719b3d70cb2effd3629" id="r_a0d12fa168dd41719b3d70cb2effd3629"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d12fa168dd41719b3d70cb2effd3629">PartitionPage</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a0d12fa168dd41719b3d70cb2effd3629"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Initialisiert das Layout für die Festplattenauswahl.  <br /></td></tr>
-<tr class="memitem:a2fcd31f19fe890fe85bf8affa40e9054" id="r_a2fcd31f19fe890fe85bf8affa40e9054"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fcd31f19fe890fe85bf8affa40e9054">onEnter</a> () override</td></tr>
-<tr class="memdesc:a2fcd31f19fe890fe85bf8affa40e9054"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Holt die aktuelle Disk-Liste beim Betreten der Seite.  <br /></td></tr>
-<tr class="memitem:ad0515d102ab969c16a517981ace32941" id="r_ad0515d102ab969c16a517981ace32941"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0515d102ab969c16a517981ace32941">isComplete</a> () const override</td></tr>
+<tr class="memdesc:a0d12fa168dd41719b3d70cb2effd3629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor der <a class="el" href="classPartitionPage.html" title="DE: Seite zur Konfiguration der Festplattenpartitionen. EN: Page for configuring disk partitions.">PartitionPage</a>. DE: Initialisiert das Layout, den Disk-Selector und den Visualizer. EN: Initializes the layout, disk selector, and the visualizer.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classInstallerPage"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classInstallerPage')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Öffentliche Methoden geerbt von <a class="el" href="classInstallerPage.html">InstallerPage</a></td></tr>
 <tr class="memitem:ac56af21018379d1c0b8248f0ffff421b inherit pub_methods_classInstallerPage" id="r_ac56af21018379d1c0b8248f0ffff421b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memitem:a520163f491a1f55029165856d949632d inherit pub_methods_classInstallerPage" id="r_a520163f491a1f55029165856d949632d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstallerPage.html#a520163f491a1f55029165856d949632d">~InstallerPage</a> ()=default</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:afaebae12885a9fde4fce7a08ec11aa8d" id="r_afaebae12885a9fde4fce7a08ec11aa8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaebae12885a9fde4fce7a08ec11aa8d">updateDiskPreview</a> (int index)</td></tr>
+<tr class="memdesc:afaebae12885a9fde4fce7a08ec11aa8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Aktualisiert die grafische Anzeige bei Auswahl einer anderen Disk. EN: Updates the graphical display when another disk is selected.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attribute</h2></td></tr>
+<tr class="memitem:a701bb5a04d96dd188a9a6a8f025f2185" id="r_a701bb5a04d96dd188a9a6a8f025f2185"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a701bb5a04d96dd188a9a6a8f025f2185">m_layout</a></td></tr>
+<tr class="memitem:a45f9fe98b4767bcddf14b3332ed2aae3" id="r_a45f9fe98b4767bcddf14b3332ed2aae3"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f9fe98b4767bcddf14b3332ed2aae3">m_instructionLabel</a></td></tr>
+<tr class="memitem:a13f6971a07977fc896fef1ce3d15a159" id="r_a13f6971a07977fc896fef1ce3d15a159"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13f6971a07977fc896fef1ce3d15a159">m_diskSelector</a></td></tr>
+<tr class="memitem:a942eb430f918c8b13e8f6c7c361c3802" id="r_a942eb430f918c8b13e8f6c7c361c3802"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAutoSlicerVisualizer.html">AutoSlicerVisualizer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a942eb430f918c8b13e8f6c7c361c3802">m_visualizer</a></td></tr>
+<tr class="memitem:af9e84b2bd1d6dd772e34a8c1ac7a2148" id="r_af9e84b2bd1d6dd772e34a8c1ac7a2148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAutoSlicer.html">AutoSlicer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9e84b2bd1d6dd772e34a8c1ac7a2148">m_slicer</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Weitere Geerbte Elemente</h2></td></tr>
 <tr class="inherit_header pro_methods_classInstallerPage"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classInstallerPage')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Geschützte Methoden geerbt von <a class="el" href="classInstallerPage.html">InstallerPage</a></td></tr>
-<tr class="memitem:a7858f321a18c601e1ad9ee5c3ec26cfb inherit pro_methods_classInstallerPage" id="r_a7858f321a18c601e1ad9ee5c3ec26cfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstallerPage.html#a7858f321a18c601e1ad9ee5c3ec26cfb">initializePage</a> () override</td></tr>
-<tr class="memdesc:a7858f321a18c601e1ad9ee5c3ec26cfb inherit pro_methods_classInstallerPage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überschreibt die Qt-interne Methode, um onEnter zu triggern.  <br /></td></tr>
+<tr class="memitem:ad38850815d022377a1a7cca1c051f917 inherit pro_methods_classInstallerPage" id="r_ad38850815d022377a1a7cca1c051f917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstallerPage.html#ad38850815d022377a1a7cca1c051f917">setPageTitle</a> (const QString &amp;title)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Seite zur Auswahl des Installationsziels. </p>
+<div class="textblock"><p>DE: Seite zur Konfiguration der Festplattenpartitionen. EN: Page for configuring disk partitions. </p>
 <ul>
-<li>DE: Listet alle verfügbaren Festplatten auf. EN: Lists all available disks. </li>
+<li></li>
 </ul>
+<p>DE: Diese Klasse verknüpft den <a class="el" href="classAutoSlicer.html" title="DE: Berechnet dynamisch die Partitionierung basierend auf der Disk-Größe.">AutoSlicer</a> (Logik) mit dem Visualizer (Grafik), um dem Nutzer eine Echtzeit-Vorschau zu bieten. EN: This class links the <a class="el" href="classAutoSlicer.html" title="DE: Berechnet dynamisch die Partitionierung basierend auf der Disk-Größe.">AutoSlicer</a> (logic) with the Visualizer (graphics) to provide the user with a real-time preview. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
 <a id="a0d12fa168dd41719b3d70cb2effd3629" name="a0d12fa168dd41719b3d70cb2effd3629"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d12fa168dd41719b3d70cb2effd3629">&#9670;&#160;</a></span>PartitionPage()</h2>
@@ -152,14 +162,19 @@ Weitere Geerbte Elemente</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>DE: Initialisiert das Layout für die Festplattenauswahl. </p>
-<p>EN: Initializes the layout for disk selection. </p>
+<p>Konstruktor der <a class="el" href="classPartitionPage.html" title="DE: Seite zur Konfiguration der Festplattenpartitionen. EN: Page for configuring disk partitions.">PartitionPage</a>. DE: Initialisiert das Layout, den Disk-Selector und den Visualizer. EN: Initializes the layout, disk selector, and the visualizer. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Zeiger auf das Eltern-Widget. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="ad0515d102ab969c16a517981ace32941" name="ad0515d102ab969c16a517981ace32941"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0515d102ab969c16a517981ace32941">&#9670;&#160;</a></span>isComplete()</h2>
+<a id="afaebae12885a9fde4fce7a08ec11aa8d" name="afaebae12885a9fde4fce7a08ec11aa8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaebae12885a9fde4fce7a08ec11aa8d">&#9670;&#160;</a></span>updateDiskPreview</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,48 +183,138 @@ Weitere Geerbte Elemente</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool PartitionPage::isComplete </td>
+          <td class="memname">void PartitionPage::updateDiskPreview </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2fcd31f19fe890fe85bf8affa40e9054" name="a2fcd31f19fe890fe85bf8affa40e9054"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fcd31f19fe890fe85bf8affa40e9054">&#9670;&#160;</a></span>onEnter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PartitionPage::onEnter </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>DE: Holt die aktuelle Disk-Liste beim Betreten der Seite. </p>
-<p>EN: Fetches current disk list when entering the page. </p>
+<p>DE: Aktualisiert die grafische Anzeige bei Auswahl einer anderen Disk. EN: Updates the graphical display when another disk is selected. </p>
+<p>Aktualisiert die grafische Slice-Vorschau. DE: Erstellt Test-Slices basierend auf der gewählten Festplattengröße. EN: Creates test slices based on the selected disk size.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Der Index der ausgewählten Festplatte. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Erneute Implementation von <a class="el" href="classInstallerPage.html#a47cb31a4dbbc36345f8c052e0d3aa72a">InstallerPage</a>.</p>
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Dokumentation der Datenelemente</h2>
+<a id="a13f6971a07977fc896fef1ce3d15a159" name="a13f6971a07977fc896fef1ce3d15a159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f6971a07977fc896fef1ce3d15a159">&#9670;&#160;</a></span>m_diskSelector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* PartitionPage::m_diskSelector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45f9fe98b4767bcddf14b3332ed2aae3" name="a45f9fe98b4767bcddf14b3332ed2aae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f9fe98b4767bcddf14b3332ed2aae3">&#9670;&#160;</a></span>m_instructionLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* PartitionPage::m_instructionLabel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a701bb5a04d96dd188a9a6a8f025f2185" name="a701bb5a04d96dd188a9a6a8f025f2185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701bb5a04d96dd188a9a6a8f025f2185">&#9670;&#160;</a></span>m_layout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout* PartitionPage::m_layout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9e84b2bd1d6dd772e34a8c1ac7a2148" name="af9e84b2bd1d6dd772e34a8c1ac7a2148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9e84b2bd1d6dd772e34a8c1ac7a2148">&#9670;&#160;</a></span>m_slicer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAutoSlicer.html">AutoSlicer</a>* PartitionPage::m_slicer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a942eb430f918c8b13e8f6c7c361c3802" name="a942eb430f918c8b13e8f6c7c361c3802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942eb430f918c8b13e8f6c7c361c3802">&#9670;&#160;</a></span>m_visualizer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAutoSlicerVisualizer.html">AutoSlicerVisualizer</a>* PartitionPage::m_visualizer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

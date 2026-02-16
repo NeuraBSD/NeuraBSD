@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: HardwareScanner Klassenreferenz</title>
+<title>CoreSeed Installer: HardwareScanner Klassenreferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -93,51 +92,74 @@ $(function(){initNavTree('classHardwareScanner.html','','classHardwareScanner-me
 </div><!--header-->
 <div class="contents">
 
-<p>Kapselt den Zugriff auf die OpenBSD Hardware-Abstraktionsschicht.  
+<p>DE: Klasse zur Hardware-Erkennung unter OpenBSD/NeuraBSD.  
  <a href="#details">Mehr ...</a></p>
 
 <p><code>#include &lt;<a class="el" href="HardwareScanner_8hpp_source.html">HardwareScanner.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Klassendiagramm für HardwareScanner:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classHardwareScanner.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Öffentliche Methoden</h2></td></tr>
-<tr class="memitem:a63af39f0164683f3b7152dcf5b46c325" id="r_a63af39f0164683f3b7152dcf5b46c325"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63af39f0164683f3b7152dcf5b46c325">HardwareScanner</a> ()</td></tr>
-<tr class="memdesc:a63af39f0164683f3b7152dcf5b46c325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor für den <a class="el" href="classHardwareScanner.html" title="Kapselt den Zugriff auf die OpenBSD Hardware-Abstraktionsschicht.">HardwareScanner</a>.  <br /></td></tr>
-<tr class="memitem:ac22a8a5dde60026f2b039ab6125e73d0" id="r_ac22a8a5dde60026f2b039ab6125e73d0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac22a8a5dde60026f2b039ab6125e73d0">getCPUModel</a> ()</td></tr>
-<tr class="memdesc:ac22a8a5dde60026f2b039ab6125e73d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ermittelt das CPU-Modell via sysctl.  <br /></td></tr>
-<tr class="memitem:a8731a20382e216658ae2a76a488867cc" id="r_a8731a20382e216658ae2a76a488867cc"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8731a20382e216658ae2a76a488867cc">getDisks</a> ()</td></tr>
-<tr class="memdesc:a8731a20382e216658ae2a76a488867cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listet die im System gefundenen Festplatten auf.  <br /></td></tr>
+<tr class="memitem:a4a47fff6f03e66efe923237ee6e3150c" id="r_a4a47fff6f03e66efe923237ee6e3150c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a47fff6f03e66efe923237ee6e3150c">HardwareScanner</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a4a47fff6f03e66efe923237ee6e3150c"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Standard-Konstruktor.  <br /></td></tr>
+<tr class="memitem:afd691f4b28a8d9a9efb70db7d6bef24c" id="r_afd691f4b28a8d9a9efb70db7d6bef24c"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd691f4b28a8d9a9efb70db7d6bef24c">getAvailableDisks</a> ()</td></tr>
+<tr class="memdesc:afd691f4b28a8d9a9efb70db7d6bef24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Listet alle verfügbaren Festplatten auf.  <br /></td></tr>
+<tr class="memitem:a92109df14563c3b1c49ca02a6ef886ba" id="r_a92109df14563c3b1c49ca02a6ef886ba"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92109df14563c3b1c49ca02a6ef886ba">getCpuInfo</a> ()</td></tr>
+<tr class="memdesc:a92109df14563c3b1c49ca02a6ef886ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Gibt Informationen zur CPU-Architektur zurück.  <br /></td></tr>
+<tr class="memitem:a58060ee7030bf748fcc701ac3618da24" id="r_a58060ee7030bf748fcc701ac3618da24"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58060ee7030bf748fcc701ac3618da24">getTotalMemoryMB</a> ()</td></tr>
+<tr class="memdesc:a58060ee7030bf748fcc701ac3618da24"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Ermittelt den gesamten Arbeitsspeicher in MB.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Ausführliche Beschreibung</h2>
-<div class="textblock"><p>Kapselt den Zugriff auf die OpenBSD Hardware-Abstraktionsschicht. </p>
+<div class="textblock"><p>DE: Klasse zur Hardware-Erkennung unter OpenBSD/NeuraBSD. </p>
+<p>EN: Class for hardware detection under OpenBSD/NeuraBSD. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
-<a id="a63af39f0164683f3b7152dcf5b46c325" name="a63af39f0164683f3b7152dcf5b46c325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63af39f0164683f3b7152dcf5b46c325">&#9670;&#160;</a></span>HardwareScanner()</h2>
+<a id="a4a47fff6f03e66efe923237ee6e3150c" name="a4a47fff6f03e66efe923237ee6e3150c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a47fff6f03e66efe923237ee6e3150c">&#9670;&#160;</a></span>HardwareScanner()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">HardwareScanner::HardwareScanner </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Konstruktor für den <a class="el" href="classHardwareScanner.html" title="Kapselt den Zugriff auf die OpenBSD Hardware-Abstraktionsschicht.">HardwareScanner</a>. </p>
+<p>DE: Standard-Konstruktor. </p>
+<p>EN: Standard constructor. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>DE: Qt-Elternobjekt. EN: Qt parent object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentation der Elementfunktionen</h2>
-<a id="ac22a8a5dde60026f2b039ab6125e73d0" name="ac22a8a5dde60026f2b039ab6125e73d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac22a8a5dde60026f2b039ab6125e73d0">&#9670;&#160;</a></span>getCPUModel()</h2>
+<a id="afd691f4b28a8d9a9efb70db7d6bef24c" name="afd691f4b28a8d9a9efb70db7d6bef24c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd691f4b28a8d9a9efb70db7d6bef24c">&#9670;&#160;</a></span>getAvailableDisks()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString HardwareScanner::getCPUModel </td>
+          <td class="memname">QStringList HardwareScanner::getAvailableDisks </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -145,21 +167,21 @@ $(function(){initNavTree('classHardwareScanner.html','','classHardwareScanner-me
       </table>
 </div><div class="memdoc">
 
-<p>Ermittelt das CPU-Modell via sysctl. </p>
-<p>WAS: CPU-Modell auslesen.</p>
-<dl class="section return"><dt>Rückgabe</dt><dd>String mit der CPU-Bezeichnung.</dd></dl>
-<p>WIE: Aufruf von 'sysctl -n hw.model'. WARUM: Um dem Benutzer anzuzeigen, auf welcher Hardware er installiert. </p>
+<p>DE: Listet alle verfügbaren Festplatten auf. </p>
+<p>EN: Lists all available hard drives. </p><dl class="section return"><dt>Rückgabe</dt><dd>QStringList</dd></dl>
+<p>DE: Nutzt QSysInfo und simulierte sysctl-Abfragen.</p>
+<p>EN: Uses QSysInfo and simulated sysctl queries. </p>
 
 </div>
 </div>
-<a id="a8731a20382e216658ae2a76a488867cc" name="a8731a20382e216658ae2a76a488867cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8731a20382e216658ae2a76a488867cc">&#9670;&#160;</a></span>getDisks()</h2>
+<a id="a92109df14563c3b1c49ca02a6ef886ba" name="a92109df14563c3b1c49ca02a6ef886ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92109df14563c3b1c49ca02a6ef886ba">&#9670;&#160;</a></span>getCpuInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QStringList HardwareScanner::getDisks </td>
+          <td class="memname">QString HardwareScanner::getCpuInfo </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -167,10 +189,28 @@ $(function(){initNavTree('classHardwareScanner.html','','classHardwareScanner-me
       </table>
 </div><div class="memdoc">
 
-<p>Listet die im System gefundenen Festplatten auf. </p>
-<p>WAS: Festplattennamen ermitteln.</p>
-<dl class="section return"><dt>Rückgabe</dt><dd>Liste der Gerätenamen (z.B. sd0, wd0).</dd></dl>
-<p>WIE: Abfrage von 'sysctl -n hw.disknames'. WARUM: Identifikation der Zielmedien für die Installation. </p>
+<p>DE: Gibt Informationen zur CPU-Architektur zurück. </p>
+<p>EN: Returns information about the CPU architecture. </p><dl class="section return"><dt>Rückgabe</dt><dd>QString </dd></dl>
+
+</div>
+</div>
+<a id="a58060ee7030bf748fcc701ac3618da24" name="a58060ee7030bf748fcc701ac3618da24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58060ee7030bf748fcc701ac3618da24">&#9670;&#160;</a></span>getTotalMemoryMB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long HardwareScanner::getTotalMemoryMB </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DE: Ermittelt den gesamten Arbeitsspeicher in MB. </p>
+<p>EN: Determines the total system memory in MB. </p><dl class="section return"><dt>Rückgabe</dt><dd>long long </dd></dl>
 
 </div>
 </div>

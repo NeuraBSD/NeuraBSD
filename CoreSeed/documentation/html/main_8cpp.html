@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: src/main.cpp-Dateireferenz</title>
+<title>CoreSeed Installer: src/main.cpp-Dateireferenz</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -92,15 +91,17 @@ $(function(){initNavTree('main_8cpp.html','',''); });
   <div class="headertitle"><div class="title">main.cpp-Dateireferenz</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QApplication&gt;</code><br />
-<code>#include &quot;<a class="el" href="CoreSeed_8hpp_source.html">ui/CoreSeed.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DiagnosticPage_8hpp_source.html">pages/DiagnosticPage.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PartitionPage_8hpp_source.html">pages/PartitionPage.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TerminalPage_8hpp_source.html">pages/TerminalPage.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;QCoreApplication&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="AutoSlicer_8hpp_source.html">core/AutoSlicer.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funktionen</h2></td></tr>
+<tr class="memitem:ad517cf0482ae9640b798465f753d41cc" id="r_ad517cf0482ae9640b798465f753d41cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad517cf0482ae9640b798465f753d41cc">simulate</a> (long long sizeGB)</td></tr>
+<tr class="memdesc:ad517cf0482ae9640b798465f753d41cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Simuliert die Partitionierung für eine gegebene Festplattengröße.  <br /></td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">DE: Einstiegspunkt zur Validierung der Slicer-Logik.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentation der Funktionen</h2>
 <a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
@@ -121,6 +122,34 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>DE: Einstiegspunkt zur Validierung der Slicer-Logik. </p>
+<p>EN: Entry point for slicer logic validation. </p>
+
+</div>
+</div>
+<a id="ad517cf0482ae9640b798465f753d41cc" name="ad517cf0482ae9640b798465f753d41cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad517cf0482ae9640b798465f753d41cc">&#9670;&#160;</a></span>simulate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void simulate </td>
+          <td>(</td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>sizeGB</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DE: Simuliert die Partitionierung für eine gegebene Festplattengröße. </p>
+<p>EN: Simulates partitioning for a given disk size. </p><dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sizeGB</td><td>Die Größe der fiktiven Festplatte in Gigabyte. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

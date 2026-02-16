@@ -1,39 +1,50 @@
-# $NeuraBSD: CoreSeed.pro, v 1.4 2026/02/14 CodeAkrobat Exp $
-# DE: Projektkonfiguration für CoreSeed.
-# EN: Project configuration for CoreSeed.
+# $NeuraBSD: CoreSeed/CoreSeed.pro, v 1.6 2026/02/16 CodeAkrobat Exp $
+#
+# DE: Projektkonfiguration für den CoreSeed Installer (Qt6/OpenBSD).
+# EN: Project configuration for the CoreSeed installer (Qt6/OpenBSD).
+#
+# DE: Hard-Tabs (8 Zeichen) für OpenBSD-Konformität.
+# EN: Hard tabs (8 chars) for OpenBSD conformity.
 
-QT += core gui widgets
-CONFIG += c++2a
+QT	+= core gui widgets
 
-TARGET = CoreSeed
-TEMPLATE = app
+CONFIG	+= c++17
 
-# DE: Suchpfade für Header (Modularer Aufbau)
-# EN: Search paths for headers (Modular structure)
-INCLUDEPATH += src/core src/pages src/ui
+TARGET	= coreseed
+TEMPLATE	= app
 
-# DE: Header-Dateien (.hpp für C++ Standards)
-# EN: Header files (.hpp for C++ standards)
-HEADERS += src/core/HardwareScanner.hpp \
-src/core/SysExecutor.hpp \
-src/pages/DiagnosticPage.hpp \
-src/pages/PartitionPage.hpp \
-src/pages/TerminalPage.hpp \
-src/ui/CoreSeed.hpp \
-src/ui/InstallerPage.hpp
+# DE: Suchpfade
+INCLUDEPATH	+= src
 
-# DE: Quellcodedateien
-# EN: Source files
-SOURCES += src/main.cpp \
-src/core/HardwareScanner.cpp \
-src/core/SysExecutor.cpp \
-src/pages/DiagnosticPage.cpp \
-src/pages/PartitionPage.cpp \
-src/pages/TerminalPage.cpp \
-src/ui/CoreSeed.cpp \
-src/ui/InstallerPage.cpp
+# DE: Quelldateien
+SOURCES	+= \
+	src/main.cpp \
+	src/core/AutoSlicer.cpp \
+	src/core/HardwareScanner.cpp \
+	src/core/SysExecutor.cpp \
+	src/ui/CoreSeed.cpp \
+	src/ui/AutoSlicerVisualizer.cpp \
+	src/ui/InstallerPage.cpp \
+	src/pages/DiagnosticPage.cpp \
+	src/pages/PartitionPage.cpp \
+	src/pages/TerminalPage.cpp
 
-# DE: Build-Verzeichnisse sauber trennen
-# EN: Keep build directories clean
-MOC_DIR = build/moc
-OBJECTS_DIR = build/obj
+# DE: Header-Dateien
+HEADERS	+= \
+	src/core/AutoSlicer.hpp \
+	src/core/HardwareScanner.hpp \
+	src/core/SysExecutor.hpp \
+	src/ui/CoreSeed.hpp \
+	src/ui/AutoSlicerVisualizer.hpp \
+	src/ui/InstallerPage.hpp \
+	src/pages/DiagnosticPage.hpp \
+	src/pages/PartitionPage.hpp \
+	src/pages/TerminalPage.hpp
+
+RESOURCES	+= resources.qrc
+
+# DE: Installationsziel
+target.path	= /usr/local/bin
+INSTALLS	+= target
+
+CONFIG	+= warn_on

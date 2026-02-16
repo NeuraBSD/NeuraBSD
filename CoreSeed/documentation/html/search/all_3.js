@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['getcpumodel_0',['getCPUModel',['../classHardwareScanner.html#ac22a8a5dde60026f2b039ab6125e73d0',1,'HardwareScanner']]],
-  ['getdisks_1',['getDisks',['../classHardwareScanner.html#a8731a20382e216658ae2a76a488867cc',1,'HardwareScanner']]]
+  ['description_0',['description',['../structSliceInfo.html#ab39f3324422eaf6cb1e292bc7740e477',1,'SliceInfo']]],
+  ['diagnosticpage_1',['DiagnosticPage',['../classDiagnosticPage.html',1,'DiagnosticPage'],['../classDiagnosticPage.html#a681ebb4903ced6193f637bcf1e62101e',1,'DiagnosticPage::DiagnosticPage()']]],
+  ['diagnosticpage_2ecpp_2',['DiagnosticPage.cpp',['../DiagnosticPage_8cpp.html',1,'']]],
+  ['diagnosticpage_2ehpp_3',['DiagnosticPage.hpp',['../DiagnosticPage_8hpp.html',1,'']]]
 ];

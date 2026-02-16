@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['installerpage_0',['InstallerPage',['../classInstallerPage.html',1,'InstallerPage'],['../classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b',1,'InstallerPage::InstallerPage()']]],
+  ['installerpage_2ecpp_1',['InstallerPage.cpp',['../InstallerPage_8cpp.html',1,'']]],
+  ['installerpage_2ehpp_2',['InstallerPage.hpp',['../InstallerPage_8hpp.html',1,'']]]
 ];

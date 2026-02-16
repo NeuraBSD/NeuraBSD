@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['initializepage_0',['initializePage',['../classInstallerPage.html#a7858f321a18c601e1ad9ee5c3ec26cfb',1,'InstallerPage']]],
-  ['installerpage_1',['InstallerPage',['../classInstallerPage.html',1,'InstallerPage'],['../classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b',1,'InstallerPage::InstallerPage()']]],
-  ['installerpage_2ehpp_2',['InstallerPage.hpp',['../InstallerPage_8hpp.html',1,'']]],
-  ['iscomplete_3',['isComplete',['../classPartitionPage.html#ad0515d102ab969c16a517981ace32941',1,'PartitionPage']]]
+  ['hardwarescanner_0',['HardwareScanner',['../classHardwareScanner.html',1,'HardwareScanner'],['../classHardwareScanner.html#a4a47fff6f03e66efe923237ee6e3150c',1,'HardwareScanner::HardwareScanner()']]],
+  ['hardwarescanner_2ecpp_1',['HardwareScanner.cpp',['../HardwareScanner_8cpp.html',1,'']]],
+  ['hardwarescanner_2ehpp_2',['HardwareScanner.hpp',['../HardwareScanner_8hpp.html',1,'']]]
 ];

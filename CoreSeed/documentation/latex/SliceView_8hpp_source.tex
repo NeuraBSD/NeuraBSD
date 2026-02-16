@@ -1,0 +1,34 @@
+\doxysection{Slice\+View.\+hpp}
+\hypertarget{SliceView_8hpp_source}{}\label{SliceView_8hpp_source}\index{src/pages/SliceView.hpp@{src/pages/SliceView.hpp}}
+\mbox{\hyperlink{SliceView_8hpp}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ \$NeuraBSD:\ CoreSeed/src/pages/SliceView.hpp,\ v\ 1.2\ 2026/02/15\ CodeAkrobat\ Exp\ \$\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ DE:\ Visualisierung\ der\ Partitionen\ (Slices).}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ EN:\ Visualization\ of\ partitions\ (slices).}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*\ Copyright\ (c)\ 2026,\ NeuraBSD\ /\ Daniel\ Hilbert\ (CodeAkrobat)}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ License:\ BSD\ 3-\/Clause}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ SLICEVIEW\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ SLICEVIEW\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QWizardPage>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{AutoSlicer_8hpp}{core/AutoSlicer.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSliceView_acfaa07ab4fca5d3bcf32c6f9974b70d6}{SliceView}}\ :\ \textcolor{keyword}{public}\ QWizardPage\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classSliceView_acfaa07ab4fca5d3bcf32c6f9974b70d6}{SliceView}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSliceView_a8fc2e285baf420bd2eb5882f1a6a09d7}{refreshLayout}}(\textcolor{keywordtype}{long}\ totalGB);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ QVBoxLayout\ *\mbox{\hyperlink{classSliceView_a837c777a45c97e7d69a55556742a30fc}{m\_mainLayout}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif\ }\textcolor{comment}{//\ SLICEVIEW\_HPP}}
+
+\end{DoxyCode}

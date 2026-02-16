@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hardwarescanner_2ecpp_0',['HardwareScanner.cpp',['../HardwareScanner_8cpp.html',1,'']]],
-  ['hardwarescanner_2ehpp_1',['HardwareScanner.hpp',['../HardwareScanner_8hpp.html',1,'']]]
+  ['diagnosticpage_2ecpp_0',['DiagnosticPage.cpp',['../DiagnosticPage_8cpp.html',1,'']]],
+  ['diagnosticpage_2ehpp_1',['DiagnosticPage.hpp',['../DiagnosticPage_8hpp.html',1,'']]]
 ];

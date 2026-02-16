@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuraBSD CoreSeed: src/core/HardwareScanner.hpp Quellcode</title>
+<title>CoreSeed Installer: src/core/HardwareScanner.hpp Quellcode</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">NeuraBSD CoreSeed
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">Graphical Deployment System for OpenBSD</div>
   </td>
  </tr>
  </tbody>
@@ -92,40 +91,40 @@ $(function(){initNavTree('HardwareScanner_8hpp_source.html','',''); });
   <div class="headertitle"><div class="title">HardwareScanner.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="HardwareScanner_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* $NeuraBSD: CoreSeed/src/core/HardwareScanner.hpp, v 1.1 2026/02/08 CodeAkrobat Exp $ */</span></div>
+<a href="HardwareScanner_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* $NeuraBSD: CoreSeed/src/core/HardwareScanner.hpp, v 1.2 2026/02/15 CodeAkrobat Exp $ */</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * DE: Hardware-Erkennungskomponente für das NeuraBSD-System.</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * EN: Hardware detection component for the NeuraBSD system.</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * WAS: Scannt Systemressourcen wie CPU-Modell und Festplattennamen.</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * WIE: Nutzt QProcess zur Abfrage von OpenBSD sysctl-Werten.</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * WARUM: Notwendig für die automatische Konfiguration und Benutzerinformation.</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * License: BSD 3-Clause</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef HARDWARESCANNER_HPP</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define HARDWARESCANNER_HPP</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classHardwareScanner.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="classHardwareScanner.html#a63af39f0164683f3b7152dcf5b46c325">HardwareScanner</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classHardwareScanner.html#a63af39f0164683f3b7152dcf5b46c325">HardwareScanner</a>();</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* DE: Erkennung der Hardware-Ressourcen (CPU, RAM, Disks).</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">* EN: Detection of hardware resources (CPU, RAM, Disks).</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">*</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">* Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">* License: BSD 3-Clause</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef HARDWARESCANNER_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define HARDWARESCANNER_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classHardwareScanner.html">   21</a></span><span class="keyword">class </span><a class="code hl_function" href="classHardwareScanner.html#a4a47fff6f03e66efe923237ee6e3150c">HardwareScanner</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Q_OBJECT</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="classHardwareScanner.html#a4a47fff6f03e66efe923237ee6e3150c">HardwareScanner</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QString <a class="code hl_function" href="classHardwareScanner.html#ac22a8a5dde60026f2b039ab6125e73d0">getCPUModel</a>();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    QStringList <a class="code hl_function" href="classHardwareScanner.html#a8731a20382e216658ae2a76a488867cc">getDisks</a>();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        QStringList <a class="code hl_function" href="classHardwareScanner.html#afd691f4b28a8d9a9efb70db7d6bef24c">getAvailableDisks</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        QString <a class="code hl_function" href="classHardwareScanner.html#a92109df14563c3b1c49ca02a6ef886ba">getCpuInfo</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classHardwareScanner.html#a58060ee7030bf748fcc701ac3618da24">getTotalMemoryMB</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// HARDWARESCANNER_HPP</span></div>
-<div class="ttc" id="aclassHardwareScanner_html_a63af39f0164683f3b7152dcf5b46c325"><div class="ttname"><a href="classHardwareScanner.html#a63af39f0164683f3b7152dcf5b46c325">HardwareScanner::HardwareScanner</a></div><div class="ttdeci">HardwareScanner()</div><div class="ttdoc">Konstruktor für den HardwareScanner.</div><div class="ttdef"><b>Definition</b> HardwareScanner.cpp:14</div></div>
-<div class="ttc" id="aclassHardwareScanner_html_a8731a20382e216658ae2a76a488867cc"><div class="ttname"><a href="classHardwareScanner.html#a8731a20382e216658ae2a76a488867cc">HardwareScanner::getDisks</a></div><div class="ttdeci">QStringList getDisks()</div><div class="ttdoc">Listet die im System gefundenen Festplatten auf.</div><div class="ttdef"><b>Definition</b> HardwareScanner.cpp:37</div></div>
-<div class="ttc" id="aclassHardwareScanner_html_ac22a8a5dde60026f2b039ab6125e73d0"><div class="ttname"><a href="classHardwareScanner.html#ac22a8a5dde60026f2b039ab6125e73d0">HardwareScanner::getCPUModel</a></div><div class="ttdeci">QString getCPUModel()</div><div class="ttdoc">Ermittelt das CPU-Modell via sysctl.</div><div class="ttdef"><b>Definition</b> HardwareScanner.cpp:23</div></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">    #endif </span><span class="comment">// HARDWARESCANNER_HPP</span></div>
+<div class="ttc" id="aclassHardwareScanner_html_a4a47fff6f03e66efe923237ee6e3150c"><div class="ttname"><a href="classHardwareScanner.html#a4a47fff6f03e66efe923237ee6e3150c">HardwareScanner::HardwareScanner</a></div><div class="ttdeci">HardwareScanner(QObject *parent=nullptr)</div><div class="ttdoc">DE: Standard-Konstruktor.</div><div class="ttdef"><b>Definition</b> HardwareScanner.cpp:14</div></div>
+<div class="ttc" id="aclassHardwareScanner_html_a58060ee7030bf748fcc701ac3618da24"><div class="ttname"><a href="classHardwareScanner.html#a58060ee7030bf748fcc701ac3618da24">HardwareScanner::getTotalMemoryMB</a></div><div class="ttdeci">long long getTotalMemoryMB()</div><div class="ttdoc">DE: Ermittelt den gesamten Arbeitsspeicher in MB.</div><div class="ttdef"><b>Definition</b> HardwareScanner.cpp:31</div></div>
+<div class="ttc" id="aclassHardwareScanner_html_a92109df14563c3b1c49ca02a6ef886ba"><div class="ttname"><a href="classHardwareScanner.html#a92109df14563c3b1c49ca02a6ef886ba">HardwareScanner::getCpuInfo</a></div><div class="ttdeci">QString getCpuInfo()</div><div class="ttdoc">DE: Gibt Informationen zur CPU-Architektur zurück.</div><div class="ttdef"><b>Definition</b> HardwareScanner.cpp:27</div></div>
+<div class="ttc" id="aclassHardwareScanner_html_afd691f4b28a8d9a9efb70db7d6bef24c"><div class="ttname"><a href="classHardwareScanner.html#afd691f4b28a8d9a9efb70db7d6bef24c">HardwareScanner::getAvailableDisks</a></div><div class="ttdeci">QStringList getAvailableDisks()</div><div class="ttdoc">DE: Listet alle verfügbaren Festplatten auf.</div><div class="ttdef"><b>Definition</b> HardwareScanner.cpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

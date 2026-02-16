@@ -24,14 +24,15 @@
 */
 var NAVTREE =
 [
-  [ "NeuraBSD CoreSeed", "index.html", [
+  [ "CoreSeed Installer", "index.html", [
     [ "Klassen", "annotated.html", [
       [ "Auflistung der Klassen", "annotated.html", "annotated_dup" ],
       [ "Klassen-Verzeichnis", "classes.html", null ],
       [ "Klassenhierarchie", "hierarchy.html", "hierarchy" ],
       [ "Klassen-Elemente", "functions.html", [
         [ "Alle", "functions.html", null ],
-        [ "Funktionen", "functions_func.html", null ]
+        [ "Funktionen", "functions_func.html", null ],
+        [ "Variablen", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Dateien", "files.html", [
@@ -46,7 +47,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"CoreSeed_8cpp.html"
+"AutoSlicerVisualizer_8cpp.html"
 ];
 
 var SYNCONMSG = 'Klicken um Panelsynchronisation auszuschalten';
