@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/pages/SecurityDialog.cpp, v 1.2 2026/02/15 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/pages/SecurityDialog.cpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /**
 * @file SecurityDialog.cpp
 * @brief DE: Implementierung des Sicherheitsdialogs (Warnung vor Datenverlust).

@@ -1,5 +1,14 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-<qresource prefix="/">
-	</qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file alias="NeuraPulse.qml">src/ui/NeuraPulse.qml</file>
+    </qresource>
+    <qresource prefix="/assets">
+        <file alias="header.png">../neura-tools/graphics/branding/CoreSeed/assets/header_bg.png</file>
+        <file alias="footer.png">../neura-tools/graphics/branding/CoreSeed/assets/footer_bg.png</file>
+        <file alias="sidebar.png">../neura-tools/graphics/branding/CoreSeed/assets/sidebar_bg.png</file>
+        <file alias="content.png">../neura-tools/graphics/branding/CoreSeed/assets/content_bg.png</file>
+        <file alias="glow.png">../neura-tools/graphics/branding/CoreSeed/assets/frame_glow.png</file>
+        <file alias="wallpaper.png">../neura-tools/graphics/branding/CoreSeed/assets/wallpaper_explosion.png</file>
+    </qresource>
 </RCC>

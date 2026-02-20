@@ -1,74 +1,66 @@
 #!/usr/bin/env python3
-# $NeuraBSD: CoreSeed/neura-doc.py, v 1.3 2026/02/16 CodeAkrobat Exp $
-#
-# DE: Automatisierungstool für Doxygen-Dokumentation und Projekt-Cleanup.
-# EN: Automation tool for Doxygen documentation and project cleanup.
-#
-# Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
-# License: BSD 3-Clause
+# -*- coding: utf-8 -*-
+# $NeuraBSD: scripts/neura-doc.py, v 1.3 2026/02/19 codeakrobat Exp $
 
 import os
-import subprocess
+import re
+from datetime import datetime
 
-# DE: Projekt-Wurzelverzeichnis
-# EN: Project root directory
-PROJECT_ROOT = "/home/codeakrobat/NeuraBSD/CoreSeed"
-
-def cleanup():
-    """
-    DE: Entfernt Binär-Reste (.o, .moc.o) aus den Quellcode-Ordnern.
-    EN: Removes binary artifacts (.o, .moc.o) from source directories.
-    """
-    print("--- [ Neura-Cleanup ] ---")
-    src_path = os.path.join(PROJECT_ROOT, "src")
-    count = 0
-    
-    if not os.path.exists(src_path):
-        print(f"DE: Pfad nicht gefunden: {src_path}")
-        return
-
-    for root, dirs, files in os.walk(src_path):
-        for file in files:
-            # DE: Wir entfernen Objekt-Dateien, um saubere Builds zu garantieren
-            # EN: We remove object files to guarantee clean builds
-            if file.endswith((".o", ".moc.o", ".obj")):
-                full_path = os.path.join(root, file)
-                try:
-                    os.remove(full_path)
-                    print(f"Deleted: {file}")
-                    count += 1
-                except OSError as e:
-                    print(f"Error: {e}")
-    
-    print(f"DE: {count} Dateien bereinigt. / EN: {count} files cleaned.")
-
-def run_doxygen():
-    """
-    DE: Startet den Doxygen-Prozess zur Generierung der Website-Doku.
-    EN: Starts the Doxygen process for generating website documentation.
-    """
-    print("\n--- [ Neura-Doxygen ] ---")
-    doxyfile_path = os.path.join(PROJECT_ROOT, "Doxyfile")
-    
-    if not os.path.exists(doxyfile_path):
-        print(f"DE: Fehler: Doxyfile fehlt in {PROJECT_ROOT}")
-        return
-
-    os.chdir(PROJECT_ROOT)
+def fix_content(filepath):
     try:
-        # DE: Führt Doxygen mit der konfigurierten Doxyfile aus
-        # EN: Executes Doxygen with the configured Doxyfile
-        subprocess.run(["doxygen", "Doxyfile"], check=True)
-        print("DE: Doxygen-Dokumentation wurde erfolgreich erstellt.")
-        print("EN: Doxygen documentation created successfully.")
-    except FileNotFoundError:
-        print("DE: Fehler: 'doxygen' nicht im Pfad. (pkg_add doxygen?)")
-    except Exception as e:
-        print(f"Error: {e}")
+        with open(filepath, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+    except Exception:
+        return
+
+    # 1. Hard-Tabs (8 Zeichen) für die Ziel-Datei erzwingen
+    processed_lines = []
+    for line in lines:
+        # Erst auf 8 Spaces normieren, dann 8 Spaces durch 1 Tab ersetzen
+        temp_line = line.expandtabs(8)
+        new_line = temp_line.replace('        ', '\t')
+        processed_lines.append(new_line)
+
+    content = "".join(processed_lines)
+    
+    # 2. Header-Logik
+    filename = os.path.basename(filepath)
+    rel_path = filepath.split("CoreSeed/")[-1] if "CoreSeed/" in filepath else filepath
+    current_date = datetime.now().strftime("%Y/%m/%d")
+    
+    is_py = filepath.endswith('.py')
+    comment_char = "#" if is_py else "/*"
+    comment_end = "" if is_py else " */"
+    
+    header_pattern = r"(\#|/\*) \$NeuraBSD: .* \$ (\*/|)"
+    header_template = f"{comment_char} $NeuraBSD: {rel_path}, v 1.0 {current_date} codeakrobat Exp ${comment_end}"
+    
+    # Clause (8-Tab-kompatibel eingerückt)
+    clause_text = f"{comment_char}\n * DE: Modul des NeuraBSD Projekts.\n * EN: Module of the NeuraBSD project.\n *\n * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)\n * License: BSD 3-Clause\n{comment_end}"
+
+    # 3. Header ersetzen oder einfügen
+    if re.search(header_pattern, content):
+        content = re.sub(header_pattern, header_template, content)
+    else:
+        content = header_template + "\n" + clause_text + "\n\n" + content
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f"[*] {filename}: Standard angewendet.")
+
+def walk_tree(root_dir):
+    extensions = ('.cpp', '.hpp', '.h', '.py')
+    for root, dirs, files in os.walk(root_dir):
+        # Verzeichnisse wie .git oder build-Ordner ignorieren
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        for file in files:
+            if file.endswith(extensions):
+                # Das Skript selbst nicht während des Laufs verändern, 
+                # um Schreibkonflikte zu vermeiden
+                if file != "neura-doc.py":
+                    fix_content(os.path.join(root, file))
 
 if __name__ == "__main__":
-    cleanup()
-    run_doxygen()
-    print("\n--- [ Status ] ---")
-    print("DE: Dokumentation bereit unter: documentation/html/index.html")
-    print("EN: Documentation ready at: documentation/html/index.html")
+    print("--- NeuraBSD Doc-Fixer v1.3 (Hard-Tab 8) ---")
+    walk_tree('.')
+    print("--- Fertig: Alle Dateien normiert. ---")

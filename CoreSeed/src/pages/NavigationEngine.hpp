@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/pages/NavigationEngine.hpp, v 1.3 2026/02/15 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/pages/NavigationEngine.hpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
 * DE: Navigationssteuerung mit flexibler Widget-Anbindung.
 * EN: Navigation control with flexible widget binding.

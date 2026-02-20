@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/ui/InstallerPage.hpp, v 1.1 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/ui/InstallerPage.hpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 #ifndef INSTALLERPAGE_HPP
 #define INSTALLERPAGE_HPP
 

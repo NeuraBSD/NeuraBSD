@@ -1,25 +1,42 @@
-# $NeuraBSD: CoreSeed/.gitignore, v 1.0 2026/02/16 CodeAkrobat Exp $
-# DE: Git-Ignore für CoreSeed - Hält das Repo sauber.
-# EN: Git-Ignore for CoreSeed - Keeps the repo clean.
+# $NeuraBSD: .gitignore, v 1.1 2026/02/20 codeakrobat Exp $
+# NeuraBSD CoreSeed - Git Ignore List
 
-# Binaries & Executables
-coreseed
-*.core
-core
-
-# Qt / Build-System Artefakte
-*.o
-moc_*.cpp
-moc_predefs.h
-qrc_resources.cpp
+# --- Qt / QMake / Build Artefakte ---
 Makefile
+Makefile.Debug
+Makefile.Release
+object_script.*
+*.o
+*.obj
+*.moc
+*.qrc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.qmake.stash
 .qmake.stash
 
-# Doxygen Dokumentation (Wird lokal generiert, nicht im Repo benötigt)
-# DE: Die HTML/Latex Flut wird ignoriert.
-documentation/doxygen/html/
-documentation/doxygen/latex/
+# --- Binaries ---
+CoreSeed
+CoreSeed.exe
+*.so
+*.a
+*.lib
+*.dll
 
-# Betriebssystem-Spezifisches
+# --- Dokumentation (Doxygen / neura-doc.py) ---
+# Wir ignorieren die generierte Doku, da sie auf der Webseite gehostet wird
+docs/html/
+docs/latex/
+doxygen_sqlite.db
+*.bak
+
+# --- Betriebssystem-spezifische Dateien ---
 .DS_Store
-.Thumbs.db
+Thumbs.db
+*.swp
+*~
+
+# --- NeuraBSD Lokale Testdaten ---
+test_disks.json
+logs/

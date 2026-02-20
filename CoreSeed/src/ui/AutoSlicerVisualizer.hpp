@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/ui/AutoSlicerVisualizer.hpp, v 1.3 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/ui/AutoSlicerVisualizer.hpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
  * DE: Definition der Slice-Struktur und des Visualisierungs-Widgets.
  * EN: Definition of the slice structure and visualization widget.
@@ -21,9 +21,9 @@ public:
 	 * EN: Data structure for a single OpenBSD partition.
 	 */
 	struct SliceInfo {
-		QString mountPoint;	///< DE: Einhängepunkt (z.B. / oder /home)
-		double sizeGB;		///< DE: Größe in Gigabyte (Großschreibung angepasst)
-		QColor color;		///< DE: Farbe für die GUI
+		QString mountPoint;     ///< DE: Einhängepunkt (z.B. / oder /home)
+		double sizeGB;    ///< DE: Größe in Gigabyte (Großschreibung angepasst)
+		QColor color;      ///< DE: Farbe für die GUI
 	};
 
 	explicit AutoSlicerVisualizer(QWidget *parent = nullptr);

@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/ui/InstallerPage.cpp, v 1.2 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/ui/InstallerPage.cpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
  * DE: Implementierung der Basisklasse für Installer-Seiten.
  * EN: Implementation of the base class for installer pages.

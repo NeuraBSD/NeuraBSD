@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/pages/SecurityDialog.hpp, v 1.2 2026/02/15 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/pages/SecurityDialog.hpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
 * DE: Sicherheitsdialog vor der finalen Partitionierung.
 * EN: Security dialog before final partitioning.

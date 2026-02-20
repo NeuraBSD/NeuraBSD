@@ -1,31 +1,58 @@
-/* $NeuraBSD: CoreSeed/src/pages/PartitionPage.hpp, v 1.3 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/pages/PartitionPage.hpp, v 1.0 2026/02/20 codeakrobat Exp $ */
+/*
+ * DE: Definition der Partitionsseite mit Deployment-Anbindung.
+ * EN: Definition of the partition page with deployment integration.
+ *
+ * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
+ * License: BSD 3-Clause
+ */
+
 #ifndef PARTITIONPAGE_HPP
 #define PARTITIONPAGE_HPP
 
-#include "ui/InstallerPage.hpp"
-#include "ui/AutoSlicerVisualizer.hpp"
-#include "core/AutoSlicer.hpp"
-#include <QComboBox>
-#include <QLabel>
+#include <QWidget>
 #include <QVBoxLayout>
+#include <QPushButton>
+#include <QFrame>
+#include <QComboBox>
+#include "../core/AutoSlicer.hpp"
+#include "../core/AutoSlicerVisualizer.hpp"
+#include "../core/HardwareScanner.hpp"
+#include "../core/DeploymentController.hpp"
 
-class PartitionPage : public InstallerPage {
-	Q_OBJECT
+/**
+ * @class PartitionPage
+ * @de Kontrolliert den Übergang von der Planung zur physischen Installation.
+ * @en Controls the transition from planning to physical installation.
+ */
+class PartitionPage : public QWidget
+{
+Q_OBJECT
 
 public:
-	explicit PartitionPage(QWidget *parent = nullptr);
-	QString selectedDisk() const;
-	QVector<AutoSlicerVisualizer::SliceInfo> calculatedSlices() const;
+explicit PartitionPage(QWidget *parent = nullptr);
 
 private slots:
-	void updateDiskPreview(int index);
+void toggleExpertMode();
+void refreshLayout();
+void onDiskSelected(int index);
+/** @de Startet den Deployment-Prozess nach Sicherheitsabfrage. */
+void handleInstallRequest();
+/** @de Verarbeitet Statusmeldungen vom Controller. */
+void updateStatus(int percent, const QString &status);
 
 private:
-	QVBoxLayout	*m_layout;
-	QComboBox		*m_diskSelector;
-	QLabel		*m_instructionLabel;
-	AutoSlicerVisualizer	*m_visualizer;
-	AutoSlicer		*m_slicer;
+HardwareScanner *m_hwScanner;
+AutoSlicer *m_slicer;
+AutoSlicerVisualizer *m_visualizer;
+DeploymentController *m_deployer;
+
+QComboBox *m_diskSelector;
+QVBoxLayout *m_mainLayout;
+QFrame *m_expertPanel;
+bool m_isExpert;
+
+void setupStyling();
 };
 
 #endif // PARTITIONPAGE_HPP

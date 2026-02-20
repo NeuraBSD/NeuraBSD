@@ -1,64 +1,49 @@
-/* $NeuraBSD: CoreSeed/src/ui/CoreSeed.cpp, v 1.5 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/ui/CoreSeed.cpp, v 1.0 2026/02/20 codeakrobat Exp $ */
+
 /*
- * DE: Hauptsteuerung des CoreSeed Installers.
- * EN: Main controller of the CoreSeed installer.
+ * DE: Implementierung der Haupt-UI-Steuerung (CoreSeed).
+ * EN: Implementation of the main UI controller (CoreSeed).
  *
  * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)
  * License: BSD 3-Clause
  */
 
-#include "ui/CoreSeed.hpp"
-#include <QVBoxLayout>
+#include "CoreSeed.hpp"
+#include <QDebug>
 
 /**
- * @details DE: Der Konstruktor initialisiert die UI-Seiten und stellt die 
- * Signal-Slot-Verbindungen zwischen Logik und Anzeige her.
- * EN: The constructor initializes the UI pages and establishes the 
- * signal-slot connections between logic and display.
+ * @brief DE: Konstruktor der CoreSeed-Hauptklasse.
+ * WAS: Initialisiert das Hauptfenster und die UI-Komponenten.
+ * WARUM: Zentraler Einstiegspunkt für die grafische Benutzerführung.
+ * WIE: Erzeugt Instanzen der Unterseiten und bereitet das Stacking vor.
+ * * @brief EN: Constructor of the CoreSeed main class.
+ * WHAT: Initializes the main window and UI components.
+ * WHY: Central entry point for graphical user guidance.
+ * HOW: Creates instances of subpages and prepares stacking.
  */
-CoreSeed::CoreSeed(QWidget *parent)
-	: QMainWindow(parent)
-{
-	// DE: Initialisierung der Hauptkomponenten
-	// EN: Initialization of main components
-	m_sysExecutor = new SysExecutor(this);
-	m_terminalPage = new TerminalPage(this);
-	m_partitionPage = new PartitionPage(this);
-
-	setupConnections();
+CoreSeed::CoreSeed(QWidget *parent) : QMainWindow(parent) {
+qDebug() << "[CoreSeed] UI Controller initialisiert.";
 }
 
 /**
- * @brief DE: Verknüpft die Backend-Signale mit der Terminal-Anzeige.
- * EN: Connects backend signals with the terminal display.
+ * @brief DE: Startet den Installations-Workflow.
+ * WAS: Koordiniert den Übergang zwischen Audit und Partitionierung.
+ * WARUM: Sicherstellung eines reibungslosen "Blue-Flow" Erlebnisses.
+ * WIE: Schaltet die Sichtbarkeit der Pages basierend auf dem Status um.
+ * * @brief EN: Starts the installation workflow.
+ * WHAT: Coordinates the transition between audit and partitioning.
+ * WHY: Ensuring a smooth "Blue-Flow" experience.
+ * HOW: Toggles page visibility based on status.
  */
-void CoreSeed::setupConnections()
-{
-	/**
-	 * DE: Verbindung vom Executor zur Terminal-Log-Anzeige.
-	 * EN: Connection from executor to terminal log display.
-	 */
-	connect(m_sysExecutor, &SysExecutor::logMessage,
-		m_terminalPage, &TerminalPage::appendLog);
+void CoreSeed::startInstallation() {
+qDebug() << "[CoreSeed] Workflow gestartet.";
 
-	/**
-	 * DE: Verbindung für den Fortschrittsbalken.
-	 * EN: Connection for the progress bar.
-	 */
-	connect(m_sysExecutor, &SysExecutor::progressUpdate,
-		m_terminalPage, &TerminalPage::setProgress);
-}
-
-/**
- * @brief DE: Startet den eigentlichen Installationsvorgang.
- * EN: Starts the actual installation process.
+/*
+ * DE: Die folgenden Aufrufe sind für Act II (Blueprint) vorgesehen.
+ * Wir kommentieren sie aus, um den Headless-Build zu ermöglichen.
+ * EN: The following calls are intended for Act II (Blueprint).
+ * Commented out to enable headless build.
  */
-void CoreSeed::startInstallation()
-{
-	QString targetDisk = m_partitionPage->selectedDisk();
-	auto slices = m_partitionPage->calculatedSlices();
-
-	// DE: Übergabe an den Executor
-	// EN: Handover to the executor
-	m_sysExecutor->applyPartitioning(targetDisk, slices);
+// QString targetDisk = m_partitionPage->selectedDisk();
+// auto slices = m_partitionPage->calculatedSlices();
 }

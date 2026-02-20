@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/ui/AutoSlicerVisualizer.cpp, v 1.3 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/ui/AutoSlicerVisualizer.cpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
  * DE: Grafische Darstellung der Festplatten-Slices.
  * EN: Graphical representation of disk slices.

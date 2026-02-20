@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/core/SysExecutor.cpp, v 1.2 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/core/SysExecutor.cpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
  * DE: Ausführung der Partitionierungs-Befehle für OpenBSD.
  * EN: Execution of partitioning commands for OpenBSD.
@@ -27,37 +27,37 @@ SysExecutor::SysExecutor(QObject *parent) : QObject(parent) {}
  * 3. Logical pass of formatting (newfs).
  */
 bool SysExecutor::applyPartitioning(const QString &disk, const QVector<AutoSlicerVisualizer::SliceInfo> &slices) {
-    emit logMessage(tr("--- Start der NeuraBSD Installation auf %1 ---").arg(disk));
-    emit progressUpdate(5);
+	emit logMessage(tr("--- Start der NeuraBSD Installation auf %1 ---").arg(disk));
+	emit progressUpdate(5);
 
-    // --- Schritt 1: MBR ---
-    QString fdiskCmd = QString("fdisk -iy %1").arg(disk);
-    emit logMessage(tr("Schritt 1: Initialisiere Partitionstabelle (MBR)..."));
-    emit logMessage("CMD: " + fdiskCmd);
-    emit progressUpdate(25);
+	// --- Schritt 1: MBR ---
+	QString fdiskCmd = QString("fdisk -iy %1").arg(disk);
+	emit logMessage(tr("Schritt 1: Initialisiere Partitionstabelle (MBR)..."));
+	emit logMessage("CMD: " + fdiskCmd);
+	emit progressUpdate(25);
 
-    // --- Schritt 2: Slicing ---
-    emit logMessage(tr("Schritt 2: Berechne Slices für das Disklabel..."));
-    for (const auto &slice : slices) {
-        // DE: Wir simulieren hier die Erstellung der Slice-Tabelle
-        // EN: We simulate the creation of the slice table here
-        QString sliceMsg = QString(" > Slice %1: %2 GB")
-                           .arg(slice.mountPoint)
-                           .arg(slice.sizeGB);
-        emit logMessage(sliceMsg);
-    }
-    emit progressUpdate(60);
+	// --- Schritt 2: Slicing ---
+	emit logMessage(tr("Schritt 2: Berechne Slices für das Disklabel..."));
+	for (const auto &slice : slices) {
+		// DE: Wir simulieren hier die Erstellung der Slice-Tabelle
+		// EN: We simulate the creation of the slice table here
+		QString sliceMsg = QString(" > Slice %1: %2 GB")
+						   .arg(slice.mountPoint)
+						   .arg(slice.sizeGB);
+		emit logMessage(sliceMsg);
+	}
+	emit progressUpdate(60);
 
-    // --- Schritt 3: NewFS ---
-    emit logMessage(tr("Schritt 3: Dateisysteme werden formatiert (newfs)..."));
-    emit progressUpdate(90);
+	// --- Schritt 3: NewFS ---
+	emit logMessage(tr("Schritt 3: Dateisysteme werden formatiert (newfs)..."));
+	emit progressUpdate(90);
 
-    if (m_dryRun) {
-        emit logMessage(tr("HINWEIS: Dry-Run Modus aktiv. Keine Daten geschrieben."));
-    }
+	if (m_dryRun) {
+		emit logMessage(tr("HINWEIS: Dry-Run Modus aktiv. Keine Daten geschrieben."));
+	}
 
-    emit logMessage(tr("--- Phase 1 (Partitionierung) abgeschlossen ---"));
-    emit progressUpdate(100);
+	emit logMessage(tr("--- Phase 1 (Partitionierung) abgeschlossen ---"));
+	emit progressUpdate(100);
 
-    return true; 
+	return true; 
 }

@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/ui/CoreSeed.hpp, v 1.5 2026/02/16 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/ui/CoreSeed.hpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
  * DE: Header für die Hauptsteuerung des CoreSeed Installers.
  * EN: Header for the main controller of the CoreSeed installer.
@@ -30,9 +30,9 @@ public:
 private:
 	void setupConnections();
 
-	SysExecutor	*m_sysExecutor;
-	TerminalPage	*m_terminalPage;
-	PartitionPage	*m_partitionPage;
+	SysExecutor     *m_sysExecutor;
+	TerminalPage    *m_terminalPage;
+	PartitionPage   *m_partitionPage;
 };
 
 #endif // CORESEED_HPP

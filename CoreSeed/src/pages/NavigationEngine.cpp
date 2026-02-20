@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/pages/NavigationEngine.cpp, v 1.3 2026/02/15 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/pages/NavigationEngine.cpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /*
 * DE: Implementierung der Navigation mit sicherem Type-Casting.
 * EN: Implementation of navigation with safe type casting.

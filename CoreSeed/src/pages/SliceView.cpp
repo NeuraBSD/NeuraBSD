@@ -1,4 +1,4 @@
-/* $NeuraBSD: CoreSeed/src/pages/SliceView.cpp, v 1.2 2026/02/15 CodeAkrobat Exp $ */
+/* $NeuraBSD: ./src/pages/SliceView.cpp, v 1.0 2026/02/20 codeakrobat Exp $ */
 /**
 * @file SliceView.cpp
 * @brief DE: Implementierung der grafischen Slice-Vorschau.
