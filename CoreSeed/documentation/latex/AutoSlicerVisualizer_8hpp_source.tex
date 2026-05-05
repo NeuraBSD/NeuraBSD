@@ -1,0 +1,45 @@
+\doxysection{Auto\+Slicer\+Visualizer.\+hpp}
+\hypertarget{AutoSlicerVisualizer_8hpp_source}{}\label{AutoSlicerVisualizer_8hpp_source}\index{src/ui/AutoSlicerVisualizer.hpp@{src/ui/AutoSlicerVisualizer.hpp}}
+\mbox{\hyperlink{AutoSlicerVisualizer_8hpp}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ \$NeuraBSD:\ CoreSeed/src/ui/AutoSlicerVisualizer.hpp,\ v\ 1.0\ 2026/02/16\ CodeAkrobat\ Exp\ \$\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ DE:\ Visualisierung\ der\ Partitionstabelle\ (Slices)\ für\ den\ AutoSlicer.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ EN:\ Visualization\ of\ the\ partition\ table\ (slices)\ for\ the\ AutoSlicer.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2026,\ NeuraBSD\ /\ Daniel\ Hilbert\ (CodeAkrobat)}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ License:\ BSD\ 3-\/Clause}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ AUTOSLICERVISUALIZER\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ AUTOSLICERVISUALIZER\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAutoSlicerVisualizer_a396ec8fd3ca31107be832832c87c04fc}{AutoSlicerVisualizer}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classAutoSlicerVisualizer_a396ec8fd3ca31107be832832c87c04fc}{AutoSlicerVisualizer}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo}{SliceInfo}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo_a33d26a44466625f578d63224db180e1b}{name}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo_a5926011598c12d87825e59e63f42b766}{sizeGb}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo_ad7585960d344a8679dbb984a52069f78}{color}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAutoSlicerVisualizer_ad702afcb09977612c4e7d231209e9317}{setSlices}}(\textcolor{keyword}{const}\ QVector<SliceInfo>\ \&slices);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAutoSlicerVisualizer_a3ebc6ac3091297b821631251af0fee55}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ QVector<SliceInfo>\ \mbox{\hyperlink{classAutoSlicerVisualizer_a9d1827d581a00aeaf5b47fadd64575dd}{m\_slices}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QColor\ \mbox{\hyperlink{classAutoSlicerVisualizer_afc239212f2a74054e247a350f34d3fcb}{m\_baseBlue}}\ =\ QColor(\textcolor{stringliteral}{"{}\#0057b7"{}});\ \textcolor{comment}{//\ Neura-\/Blue}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AUTOSLICERVISUALIZER\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\doxysection{Auto\+Slicer.\+hpp}
+\hypertarget{AutoSlicer_8hpp_source}{}\label{AutoSlicer_8hpp_source}\index{src/core/AutoSlicer.hpp@{src/core/AutoSlicer.hpp}}
+\mbox{\hyperlink{AutoSlicer_8hpp}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ \$NeuraBSD:\ CoreSeed/src/core/AutoSlicer.hpp,\ v\ 1.2\ 2026/02/15\ CodeAkrobat\ Exp\ \$\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ DE:\ Logik\ zur\ automatischen\ Berechnung\ der\ Partitionierung.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ EN:\ Logic\ for\ automatic\ partitioning\ calculation.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*\ Copyright\ (c)\ 2026,\ NeuraBSD\ /\ Daniel\ Hilbert\ (CodeAkrobat)}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ License:\ BSD\ 3-\/Clause}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ AUTOSLICER\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ AUTOSLICER\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSliceInfo}{SliceInfo}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ QString\ \mbox{\hyperlink{structSliceInfo_aa8e6175b9adda038e718cba8d9e7c5cf}{mountPoint}};\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structSliceInfo_ae367a005698cf09b9701ad72c33d2958}{sizeMB}};\ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ QString\ \mbox{\hyperlink{structSliceInfo_ab39f3324422eaf6cb1e292bc7740e477}{description}};\ }
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAutoSlicer_a89538d539d38d5ae34d763b7b53a33f9}{AutoSlicer}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classAutoSlicer_a89538d539d38d5ae34d763b7b53a33f9}{AutoSlicer}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ totalDiskSizeMB);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAutoSlicer_a8428d7dbb34ec90728abd0ed4e925c13}{calculateLayout}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ QList<SliceInfo>\ \mbox{\hyperlink{classAutoSlicer_acc1c2c7237241643cad3efb8ff76af46}{getLayout}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classAutoSlicer_abc7a299d1eee412cff3fbee60f9b327f}{m\_totalSize}};\ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ QList<SliceInfo>\ \mbox{\hyperlink{classAutoSlicer_a52e2785337ec6c09facb10f526a0c2cd}{m\_layout}};\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif\ }\textcolor{comment}{//\ AUTOSLICER\_HPP}}
+
+\end{DoxyCode}

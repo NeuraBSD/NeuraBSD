@@ -1,0 +1,44 @@
+\doxysection{Partition\+Page.\+hpp}
+\hypertarget{PartitionPage_8hpp_source}{}\label{PartitionPage_8hpp_source}\index{src/pages/PartitionPage.hpp@{src/pages/PartitionPage.hpp}}
+\mbox{\hyperlink{PartitionPage_8hpp}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ \$NeuraBSD:\ CoreSeed/src/pages/PartitionPage.hpp,\ v\ 1.5\ 2026/02/16\ CodeAkrobat\ Exp\ \$\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ DE:\ UI-\/Komponente\ für\ die\ Festplattenverwaltung\ und\ Slicing-\/Visualisierung.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ EN:\ UI\ component\ for\ disk\ management\ and\ slicing\ visualization.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2026,\ NeuraBSD\ /\ Daniel\ Hilbert\ (CodeAkrobat)}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ License:\ BSD\ 3-\/Clause}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ PARTITIONPAGE\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ PARTITIONPAGE\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InstallerPage_8hpp}{InstallerPage.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }QVBoxLayout;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAutoSlicerVisualizer}{AutoSlicerVisualizer}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAutoSlicer}{AutoSlicer}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPartitionPage_a0d12fa168dd41719b3d70cb2effd3629}{PartitionPage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classInstallerPage_ac56af21018379d1c0b8248f0ffff421b}{InstallerPage}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classPartitionPage_a0d12fa168dd41719b3d70cb2effd3629}{PartitionPage}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPartitionPage_afaebae12885a9fde4fce7a08ec11aa8d}{updateDiskPreview}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ QVBoxLayout*\ \mbox{\hyperlink{classPartitionPage_a701bb5a04d96dd188a9a6a8f025f2185}{m\_layout}};}
+\DoxyCodeLine{00045\ \ \ \ \ QLabel*\ \mbox{\hyperlink{classPartitionPage_a45f9fe98b4767bcddf14b3332ed2aae3}{m\_instructionLabel}};}
+\DoxyCodeLine{00046\ \ \ \ \ QComboBox*\ \mbox{\hyperlink{classPartitionPage_a13f6971a07977fc896fef1ce3d15a159}{m\_diskSelector}};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classAutoSlicerVisualizer}{AutoSlicerVisualizer}}*\ \mbox{\hyperlink{classPartitionPage_a942eb430f918c8b13e8f6c7c361c3802}{m\_visualizer}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classAutoSlicer}{AutoSlicer}}*\ \mbox{\hyperlink{classPartitionPage_af9e84b2bd1d6dd772e34a8c1ac7a2148}{m\_slicer}};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARTITIONPAGE\_HPP}}
+
+\end{DoxyCode}

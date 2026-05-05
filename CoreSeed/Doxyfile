@@ -1,0 +1,14 @@
+# $NeuraBSD: CoreSeed/Doxyfile, v 1.1 2026/02/16 CodeAkrobat Exp $
+PROJECT_NAME           = "CoreSeed Installer"
+PROJECT_NUMBER         = "1.0"
+OUTPUT_DIRECTORY       = documentation
+INPUT                  = src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.cpp *.hpp
+OUTPUT_LANGUAGE        = German
+# DE: Erlaubt zweisprachige Doku in den Kommentaren
+# EN: Allows bilingual documentation in comments
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+GENERATE_HTML          = YES
+HAVE_DOT               = NO

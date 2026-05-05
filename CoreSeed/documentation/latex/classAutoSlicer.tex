@@ -1,0 +1,107 @@
+\doxysection{Auto\+Slicer Klassenreferenz}
+\hypertarget{classAutoSlicer}{}\label{classAutoSlicer}\index{AutoSlicer@{AutoSlicer}}
+
+
+DE\+: Berechnet dynamisch die Partitionierung basierend auf der Disk-\/\+Größe.  
+
+
+
+
+{\ttfamily \#include $<$Auto\+Slicer.\+hpp$>$}
+
+\doxysubsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAutoSlicer_a89538d539d38d5ae34d763b7b53a33f9}{Auto\+Slicer}} (long long total\+Disk\+Size\+MB)
+\begin{DoxyCompactList}\small\item\em DE\+: Konstruktor mit Angabe der Gesamtgröße. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAutoSlicer_a8428d7dbb34ec90728abd0ed4e925c13}{calculate\+Layout}} ()
+\begin{DoxyCompactList}\small\item\em DE\+: Startet die Berechnung des Layouts. \end{DoxyCompactList}\item 
+QList$<$ \mbox{\hyperlink{structSliceInfo}{Slice\+Info}} $>$ \mbox{\hyperlink{classAutoSlicer_acc1c2c7237241643cad3efb8ff76af46}{get\+Layout}} () const
+\begin{DoxyCompactList}\small\item\em DE\+: Gibt das berechnete Layout zurück. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+long long \mbox{\hyperlink{classAutoSlicer_abc7a299d1eee412cff3fbee60f9b327f}{m\+\_\+total\+Size}}
+\item 
+QList$<$ \mbox{\hyperlink{structSliceInfo}{Slice\+Info}} $>$ \mbox{\hyperlink{classAutoSlicer_a52e2785337ec6c09facb10f526a0c2cd}{m\+\_\+layout}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+DE\+: Berechnet dynamisch die Partitionierung basierend auf der Disk-\/\+Größe. 
+
+EN\+: Dynamically calculates partitioning based on disk size. 
+
+\label{doc-constructors}
+\Hypertarget{classAutoSlicer_doc-constructors}
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\Hypertarget{classAutoSlicer_a89538d539d38d5ae34d763b7b53a33f9}\index{AutoSlicer@{AutoSlicer}!AutoSlicer@{AutoSlicer}}
+\index{AutoSlicer@{AutoSlicer}!AutoSlicer@{AutoSlicer}}
+\doxysubsubsection{\texorpdfstring{AutoSlicer()}{AutoSlicer()}}
+{\footnotesize\ttfamily \label{classAutoSlicer_a89538d539d38d5ae34d763b7b53a33f9} 
+Auto\+Slicer\+::\+Auto\+Slicer (\begin{DoxyParamCaption}\item[{long long}]{total\+Disk\+Size\+MB}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+DE\+: Konstruktor mit Angabe der Gesamtgröße. 
+
+EN\+: Constructor with total disk size. 
+\begin{DoxyParams}{Parameter}
+{\em total\+Disk\+Size\+MB} & DE\+: Größe der Disk in MB. EN\+: Disk size in MB. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classAutoSlicer_doc-func-members}
+\doxysubsection{Dokumentation der Elementfunktionen}
+\Hypertarget{classAutoSlicer_a8428d7dbb34ec90728abd0ed4e925c13}\index{AutoSlicer@{AutoSlicer}!calculateLayout@{calculateLayout}}
+\index{calculateLayout@{calculateLayout}!AutoSlicer@{AutoSlicer}}
+\doxysubsubsection{\texorpdfstring{calculateLayout()}{calculateLayout()}}
+{\footnotesize\ttfamily \label{classAutoSlicer_a8428d7dbb34ec90728abd0ed4e925c13} 
+void Auto\+Slicer\+::calculate\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+DE\+: Startet die Berechnung des Layouts. 
+
+EN\+: Starts the layout calculation.
+
+DE\+: Berechnet Partitionen mit fixen Werten für / und /altroot sowie prozentualen Werten mit Caps für Systemverzeichnisse.
+
+EN\+: Calculates partitions with fixed values for / and /altroot and percentage values with caps for system directories. \Hypertarget{classAutoSlicer_acc1c2c7237241643cad3efb8ff76af46}\index{AutoSlicer@{AutoSlicer}!getLayout@{getLayout}}
+\index{getLayout@{getLayout}!AutoSlicer@{AutoSlicer}}
+\doxysubsubsection{\texorpdfstring{getLayout()}{getLayout()}}
+{\footnotesize\ttfamily \label{classAutoSlicer_acc1c2c7237241643cad3efb8ff76af46} 
+QList$<$ \mbox{\hyperlink{structSliceInfo}{Slice\+Info}} $>$ Auto\+Slicer\+::get\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+DE\+: Gibt das berechnete Layout zurück. 
+
+EN\+: Returns the calculated layout. \begin{DoxyReturn}{Rückgabe}
+QList$<$\+Slice\+Info$>$ 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classAutoSlicer_doc-variable-members}
+\doxysubsection{Dokumentation der Datenelemente}
+\Hypertarget{classAutoSlicer_a52e2785337ec6c09facb10f526a0c2cd}\index{AutoSlicer@{AutoSlicer}!m\_layout@{m\_layout}}
+\index{m\_layout@{m\_layout}!AutoSlicer@{AutoSlicer}}
+\doxysubsubsection{\texorpdfstring{m\_layout}{m\_layout}}
+{\footnotesize\ttfamily \label{classAutoSlicer_a52e2785337ec6c09facb10f526a0c2cd} 
+QList$<$\mbox{\hyperlink{structSliceInfo}{Slice\+Info}}$>$ Auto\+Slicer\+::m\+\_\+layout\hspace{0.3cm}{\ttfamily [private]}}
+
+DE\+: Liste der Slices. EN\+: List of slices. \Hypertarget{classAutoSlicer_abc7a299d1eee412cff3fbee60f9b327f}\index{AutoSlicer@{AutoSlicer}!m\_totalSize@{m\_totalSize}}
+\index{m\_totalSize@{m\_totalSize}!AutoSlicer@{AutoSlicer}}
+\doxysubsubsection{\texorpdfstring{m\_totalSize}{m\_totalSize}}
+{\footnotesize\ttfamily \label{classAutoSlicer_abc7a299d1eee412cff3fbee60f9b327f} 
+long long Auto\+Slicer\+::m\+\_\+total\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+DE\+: Gesamte Disk-\/\+Größe. EN\+: Total disk size. 
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+src/core/\mbox{\hyperlink{AutoSlicer_8hpp}{Auto\+Slicer.\+hpp}}\item 
+src/core/\mbox{\hyperlink{AutoSlicer_8cpp}{Auto\+Slicer.\+cpp}}\end{DoxyCompactItemize}

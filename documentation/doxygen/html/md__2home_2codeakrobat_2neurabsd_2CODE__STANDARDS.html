@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NeuraBSD: $NeuraBSD: CODE_STANDARDS.md, v 1.1 2026/02/07 codeakrobat Exp $</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">NeuraBSD<span id="projectnumber">&#160;0.1.0-ALPHA</span>
+   </div>
+   <div id="projectbrief">Everything starts with CoreSeed, DaemonPath, and AxonSurface</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Suchen',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('md__2home_2codeakrobat_2neurabsd_2CODE__STANDARDS.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Lade ...</div>
+<div class="SRStatus" id="Searching">Suche ...</div>
+<div class="SRStatus" id="NoMatches">Keine Treffer</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">$NeuraBSD: CODE_STANDARDS.md, v 1.1 2026/02/07 codeakrobat Exp $ </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md25"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+NeuraBSD | Code Standards &amp; Guidelines</h1>
+<p>This document defines the coding standards for the NeuraBSD project. To ensure seamless compatibility with our upstream base while maintaining a distinct identity, we combine <b>OpenBSD KNF</b> with the <b>NeuraBSD Hybrid Style</b>.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+1. The Golden Rule: OpenBSD style(9)</h2>
+<p>For all C code (Kernel, Base System, and core utilities like <b>DaemonPath</b>), NeuraBSD strictly adopts the official <b>OpenBSD KNF (Kernel Normal Form)</b>.</p>
+<ul>
+<li><b>Reference:</b> <a href="https://man.openbsd.org/style.9">OpenBSD style(9) manual page</a></li>
+<li><b>Indentation:</b> Hard Tabs (8 characters wide).</li>
+<li><b>Braces:</b> KNF convention (Braces on the same line for <span class="tt">if</span>, <span class="tt">for</span>, <span class="tt">while</span>).</li>
+<li><b>Naming:</b> <span class="tt">snake_case</span> for all C functions and variables.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
+2. NeuraBSD Python Style (Hybrid)</h2>
+<p>To maintain visual consistency within the <b>MASTER-REPO</b>, Python scripts (e.g., <span class="tt">neura-tools</span>) follow a modified PEP 8 standard.</p>
+<ul>
+<li><b>Indentation:</b> <b>Hard Tabs</b> (8 characters wide) – Mandatory to match C-level visual rhythm.</li>
+<li><b>Naming:</b> * Variables &amp; Functions: <span class="tt">snake_case</span>.<ul>
+<li>Classes: <span class="tt">PascalCase</span>.</li>
+</ul>
+</li>
+<li><b>Line Length:</b> Maximum 80 characters.</li>
+<li><b>Documentation:</b> Concise docstrings in <span class="tt">mdoc(7)</span> style.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
+3. C++ &amp; Qt6 (CoreSeed, AxonSurface)</h2>
+<p>The graphical layer focuses on performance and the unique NeuraBSD aesthetic.</p>
+<ul>
+<li><b>Standard:</b> C++17 or higher.</li>
+<li><b>Naming:</b> * Classes: <span class="tt">PascalCase</span>.<ul>
+<li>Methods: <span class="tt">camelCase</span>.</li>
+<li>Member Variables: <span class="tt">m_camelCase</span>.</li>
+</ul>
+</li>
+<li><b>UI Integration:</b> Statically enforced CSS root sequence for <b>AxonSurface</b>:<ul>
+<li><span class="tt">--bg-black: #0a0a0a;</span></li>
+<li><span class="tt">--surface-black: #121212;</span></li>
+<li><span class="tt">--beastie-purple: #bc13fe;</span> (Signature Neura-Purple).</li>
+<li><span class="tt">--neura-blue: #0055ff;</span></li>
+</ul>
+</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
+4. Security &amp; Architecture</h2>
+<ul>
+<li><b>Sandboxing:</b> Usage of <span class="tt">pledge(2)</span> and <span class="tt">unveil(2)</span> is mandatory for all new NeuraBSD utilities.</li>
+<li><b>Boot Sequence:</b> The lifecycle begins with the <b>CoreSeed</b> graphical installer, followed by the <b>DaemonPath</b> boot manager, and terminates in the <b>AxonSurface</b> DE.</li>
+<li><b>Memory Safety:</b> Always prefer <span class="tt">strlcpy</span>, <span class="tt">strlcat</span>, and <span class="tt">snprintf</span> over unsafe alternatives.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
+5. Documentation &amp; Headers</h2>
+<ul>
+<li><b>File Header:</b> Every source file must start with the NeuraBSD version string and the BSD 3-Clause license: <span class="tt">$NeuraBSD: path/to/file, v 1.x Year/Month/Day Author Exp $</span></li>
+<li><b>Bilingualism:</b> Source code comments must be provided in both <b>German</b> and <b>English</b>.</li>
+<li><b>Manual Pages:</b> All system-level tools must be accompanied by an <span class="tt">mdoc(7)</span> formatted manpage.</li>
+</ul>
+<hr  />
+<p><em>"Unified code is the foundation of system stability. From the first line of CoreSeed to the final boot with DaemonPath: One rhythm, one system."</em></p>
+<p>**Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat) <a href="#" onclick="location.href='mai'+'lto:'+'lea'+'d@'+'neu'+'ra'+'bsd'+'.o'+'rg'; return false;">lead@<span class="obfuscator">.nosp@m.</span>neur<span class="obfuscator">.nosp@m.</span>absd.<span class="obfuscator">.nosp@m.</span>org</a>** <b>License: BSD 3-Clause</b> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Erzeugt am <span class="timestamp"></span> für NeuraBSD von <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

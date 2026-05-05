@@ -1,40 +1,29 @@
-# --- NeuraBSD Master Gitignore ---
+# $NeuraBSD: .gitignore, v 1.0 2026/02/15 CodeAkrobat Exp $
+# DE: Git-Ausschlussliste für NeuraBSD (Build-Artefakte & Binaries)
+# EN: Git ignore list for NeuraBSD (Build artifacts & binaries)
 
-# Kompilate und Objekte (C/C++)
-*.o
-*.obj
-*.so
-*.a
-*.lib
-*.dll
+# Binaries & Executables
+*.bin
 *.exe
-*.out
+CoreSeed.bin
 
-# Qt6 / Build-Systeme
-/build/
-/build-*/
-*.user
-.cmake/
-CMakeCache.txt
-CMakeFiles/
+# Qt / Build System
+*.o
+*.moc
+*.moc.cpp
+*.qmake.stash
 Makefile
-*.pro.user
-moc_*.cpp
-qrc_*.cpp
-ui_*.h
+.qtc_clangd/
 
-# System-spezifische Dateien
+# Doxygen / Documentation
+doc/html/
+doc/latex/
+doxygen_objdb_*.tmp
+
+# OS Specific
 .DS_Store
 Thumbs.db
-*.swp
-*~
-*.bak
 
-# NeuraBSD ISO & Release Artefakte
-/release/*.iso
-/release/*.img
-/release/staging/
-
-# Kernel & Boot (DaemonPath spezifisch)
-/sys/compile/
-/sys/arch/*/compile/
+# Python Bytecode
+__pycache__/
+*.pyc

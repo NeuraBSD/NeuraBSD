@@ -1,0 +1,65 @@
+\doxysection{new-\/file.py}
+\hypertarget{new-file_8py_source}{}\label{new-file_8py_source}\index{/home/codeakrobat/neurabsd/neura-\/tools/scripts/new-\/file.py@{/home/codeakrobat/neurabsd/neura-\/tools/scripts/new-\/file.py}}
+\mbox{\hyperlink{new-file_8py}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00001}\mbox{\hyperlink{namespacenew-file}{00001}}\ \textcolor{comment}{\#!/usr/bin/env\ python3}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00002}00002\ \textcolor{comment}{\#\ /*\ \$NeuraBSD:\ neura-\/tools/scripts/neura-\/doc.py,\ v\ 1.0\ 2026/02/07\ codeakrobat\ Exp\ \$\ */}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00003}00003\ \textcolor{comment}{\#\ /*}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00004}00004\ \textcolor{comment}{\#\ \ *\ DE:\ Automatisiert\ den\ Doxygen-\/Build\ und\ startet\ einen\ lokalen\ Preview-\/Server.}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00005}00005\ \textcolor{comment}{\#\ \ *\ EN:\ Automates\ the\ Doxygen\ build\ and\ starts\ a\ local\ preview\ server.}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00006}00006\ \textcolor{comment}{\#\ \ *}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00007}00007\ \textcolor{comment}{\#\ \ *\ Copyright\ (c)\ 2026,\ NeuraBSD\ /\ Daniel\ Hilbert\ (CodeAkrobat)}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00008}00008\ \textcolor{comment}{\#\ \ *\ License:\ BSD\ 3-\/Clause}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00009}00009\ \textcolor{comment}{\#\ \ */}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00011}00011\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00012}00012\ \textcolor{keyword}{import}\ subprocess}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00013}00013\ \textcolor{keyword}{import}\ http.server}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00014}00014\ \textcolor{keyword}{import}\ socketserver}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00015}00015\ \textcolor{keyword}{import}\ sys}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00017}00017\ \textcolor{comment}{\#\ DE:\ Pfad-\/Konfiguration\ (Tabs\ =\ 8)}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00018}00018\ \textcolor{comment}{\#\ EN:\ Path\ configuration\ (Tabs\ =\ 8)}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00019}\mbox{\hyperlink{namespacenew-file_a064f5f10059d0433dfda299bf2d1c443}{00019}}\ BASE\_DIR\ \ \ \ \ \ \ \ =\ os.path.expanduser(\textcolor{stringliteral}{"{}\string~/neurabsd/documentation/doxygen"{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00020}\mbox{\hyperlink{namespacenew-file_a83aa6de5d34cd6782c92919ae0e4dd42}{00020}}\ HTML\_DIR\ \ \ \ \ \ \ \ =\ os.path.join(BASE\_DIR,\ \textcolor{stringliteral}{"{}html"{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00021}\mbox{\hyperlink{namespacenew-file_a0cfddf4d452dcc76a3fdd6d00a2d0cd2}{00021}}\ PORT\ \ \ \ \ \ \ \ \ \ \ \ =\ 8080}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00023}\mbox{\hyperlink{namespacenew-file_a609c1f607988cd949b7e245b493fa211}{00023}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacenew-file_a609c1f607988cd949b7e245b493fa211}{build\_docs}}():}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}-\/-\/>\ NeuraBSD:\ Generating\ documentation..."{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.chdir(BASE\_DIR)}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subprocess.run([\textcolor{stringliteral}{"{}doxygen"{}},\ \textcolor{stringliteral}{"{}Doxyfile"{}}],\ check=\textcolor{keyword}{True})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Exception\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}ERROR:\ Doxygen\ failed:\ \{e\}"{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sys.exit(1)}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00032}\mbox{\hyperlink{namespacenew-file_af41e7e878c7a4343edd2b5ae39ded3de}{00032}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacenew-file_af41e7e878c7a4343edd2b5ae39ded3de}{serve\_docs}}():}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ os.path.exists(HTML\_DIR):}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}ERROR:\ \{HTML\_DIR\}\ does\ not\ exist."{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sys.exit(1)}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.chdir(HTML\_DIR)}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler\ =\ http.server.SimpleHTTPRequestHandler}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socketserver.TCPServer.allow\_reuse\_address\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{with}\ socketserver.TCPServer((\textcolor{stringliteral}{"{}"{}},\ PORT),\ handler)\ \textcolor{keyword}{as}\ httpd:}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ url\ =\ f\textcolor{stringliteral}{"{}http://localhost:\{PORT\}"{}}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}-\/-\/>\ NeuraBSD:\ Preview\ available\ at\ \{url\}"{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}-\/-\/>\ Press\ Ctrl+C\ to\ stop\ the\ server."{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Iridium\ Start}}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subprocess.Popen([\textcolor{stringliteral}{"{}iridium"{}},\ url],\ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stdout=subprocess.DEVNULL,\ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stderr=subprocess.DEVNULL)}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpd.serve\_forever()}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ KeyboardInterrupt:}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/>\ NeuraBSD:\ Documentation\ server\ stopped."{}})}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sys.exit(0)}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00057}00057\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacenew-file_a609c1f607988cd949b7e245b493fa211}{build\_docs}}()}
+\DoxyCodeLine{\Hypertarget{new-file_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacenew-file_af41e7e878c7a4343edd2b5ae39ded3de}{serve\_docs}}()}
+
+\end{DoxyCode}

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CoreSeed Installer: src/pages/PartitionPage.hpp Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CoreSeed Installer<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Suchen',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('PartitionPage_8hpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Lade ...</div>
+<div class="SRStatus" id="Searching">Suche ...</div>
+<div class="SRStatus" id="NoMatches">Keine Treffer</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PartitionPage.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="PartitionPage_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* $NeuraBSD: CoreSeed/src/pages/PartitionPage.hpp, v 1.5 2026/02/16 CodeAkrobat Exp $ */</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * DE: UI-Komponente für die Festplattenverwaltung und Slicing-Visualisierung.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * EN: UI component for disk management and slicing visualization.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Copyright (c) 2026, NeuraBSD / Daniel Hilbert (CodeAkrobat)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * License: BSD 3-Clause</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef PARTITIONPAGE_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define PARTITIONPAGE_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="InstallerPage_8hpp.html">InstallerPage.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QComboBox&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>QVBoxLayout;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span>QLabel;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="classAutoSlicerVisualizer.html">AutoSlicerVisualizer</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="classAutoSlicer.html">AutoSlicer</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classPartitionPage.html">   30</a></span><span class="keyword">class </span><a class="code hl_function" href="classPartitionPage.html#a0d12fa168dd41719b3d70cb2effd3629">PartitionPage</a> : <span class="keyword">public</span> <a class="code hl_function" href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_OBJECT</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classPartitionPage.html#a0d12fa168dd41719b3d70cb2effd3629">PartitionPage</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classPartitionPage.html#afaebae12885a9fde4fce7a08ec11aa8d">updateDiskPreview</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classPartitionPage.html#a701bb5a04d96dd188a9a6a8f025f2185">   44</a></span>    QVBoxLayout* <a class="code hl_variable" href="classPartitionPage.html#a701bb5a04d96dd188a9a6a8f025f2185">m_layout</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classPartitionPage.html#a45f9fe98b4767bcddf14b3332ed2aae3">   45</a></span>    QLabel* <a class="code hl_variable" href="classPartitionPage.html#a45f9fe98b4767bcddf14b3332ed2aae3">m_instructionLabel</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classPartitionPage.html#a13f6971a07977fc896fef1ce3d15a159">   46</a></span>    QComboBox* <a class="code hl_variable" href="classPartitionPage.html#a13f6971a07977fc896fef1ce3d15a159">m_diskSelector</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classPartitionPage.html#a942eb430f918c8b13e8f6c7c361c3802">   47</a></span>    <a class="code hl_class" href="classAutoSlicerVisualizer.html">AutoSlicerVisualizer</a>* <a class="code hl_variable" href="classPartitionPage.html#a942eb430f918c8b13e8f6c7c361c3802">m_visualizer</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classPartitionPage.html#af9e84b2bd1d6dd772e34a8c1ac7a2148">   48</a></span>    <a class="code hl_class" href="classAutoSlicer.html">AutoSlicer</a>* <a class="code hl_variable" href="classPartitionPage.html#af9e84b2bd1d6dd772e34a8c1ac7a2148">m_slicer</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// PARTITIONPAGE_HPP</span></div>
+<div class="ttc" id="aInstallerPage_8hpp_html"><div class="ttname"><a href="InstallerPage_8hpp.html">InstallerPage.hpp</a></div></div>
+<div class="ttc" id="aclassAutoSlicerVisualizer_html"><div class="ttname"><a href="classAutoSlicerVisualizer.html">AutoSlicerVisualizer</a></div><div class="ttdoc">Widget zur grafischen Darstellung der Disk-Slices. DE: Widget zur grafischen Darstellung der Disk-Sli...</div><div class="ttdef"><b>Definition</b> AutoSlicerVisualizer.hpp:21</div></div>
+<div class="ttc" id="aclassAutoSlicer_html"><div class="ttname"><a href="classAutoSlicer.html">AutoSlicer</a></div><div class="ttdoc">DE: Berechnet dynamisch die Partitionierung basierend auf der Disk-Größe.</div><div class="ttdef"><b>Definition</b> AutoSlicer.hpp:32</div></div>
+<div class="ttc" id="aclassInstallerPage_html_ac56af21018379d1c0b8248f0ffff421b"><div class="ttname"><a href="classInstallerPage.html#ac56af21018379d1c0b8248f0ffff421b">InstallerPage::InstallerPage</a></div><div class="ttdeci">InstallerPage(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> InstallerPage.cpp:13</div></div>
+<div class="ttc" id="aclassPartitionPage_html_a0d12fa168dd41719b3d70cb2effd3629"><div class="ttname"><a href="classPartitionPage.html#a0d12fa168dd41719b3d70cb2effd3629">PartitionPage::PartitionPage</a></div><div class="ttdeci">PartitionPage(QWidget *parent=nullptr)</div><div class="ttdoc">Konstruktor der PartitionPage. DE: Initialisiert das Layout, den Disk-Selector und den Visualizer....</div><div class="ttdef"><b>Definition</b> PartitionPage.cpp:20</div></div>
+<div class="ttc" id="aclassPartitionPage_html_a13f6971a07977fc896fef1ce3d15a159"><div class="ttname"><a href="classPartitionPage.html#a13f6971a07977fc896fef1ce3d15a159">PartitionPage::m_diskSelector</a></div><div class="ttdeci">QComboBox * m_diskSelector</div><div class="ttdef"><b>Definition</b> PartitionPage.hpp:46</div></div>
+<div class="ttc" id="aclassPartitionPage_html_a45f9fe98b4767bcddf14b3332ed2aae3"><div class="ttname"><a href="classPartitionPage.html#a45f9fe98b4767bcddf14b3332ed2aae3">PartitionPage::m_instructionLabel</a></div><div class="ttdeci">QLabel * m_instructionLabel</div><div class="ttdef"><b>Definition</b> PartitionPage.hpp:45</div></div>
+<div class="ttc" id="aclassPartitionPage_html_a701bb5a04d96dd188a9a6a8f025f2185"><div class="ttname"><a href="classPartitionPage.html#a701bb5a04d96dd188a9a6a8f025f2185">PartitionPage::m_layout</a></div><div class="ttdeci">QVBoxLayout * m_layout</div><div class="ttdef"><b>Definition</b> PartitionPage.hpp:44</div></div>
+<div class="ttc" id="aclassPartitionPage_html_a942eb430f918c8b13e8f6c7c361c3802"><div class="ttname"><a href="classPartitionPage.html#a942eb430f918c8b13e8f6c7c361c3802">PartitionPage::m_visualizer</a></div><div class="ttdeci">AutoSlicerVisualizer * m_visualizer</div><div class="ttdef"><b>Definition</b> PartitionPage.hpp:47</div></div>
+<div class="ttc" id="aclassPartitionPage_html_af9e84b2bd1d6dd772e34a8c1ac7a2148"><div class="ttname"><a href="classPartitionPage.html#af9e84b2bd1d6dd772e34a8c1ac7a2148">PartitionPage::m_slicer</a></div><div class="ttdeci">AutoSlicer * m_slicer</div><div class="ttdef"><b>Definition</b> PartitionPage.hpp:48</div></div>
+<div class="ttc" id="aclassPartitionPage_html_afaebae12885a9fde4fce7a08ec11aa8d"><div class="ttname"><a href="classPartitionPage.html#afaebae12885a9fde4fce7a08ec11aa8d">PartitionPage::updateDiskPreview</a></div><div class="ttdeci">void updateDiskPreview(int index)</div><div class="ttdoc">DE: Aktualisiert die grafische Anzeige bei Auswahl einer anderen Disk. EN: Updates the graphical disp...</div><div class="ttdef"><b>Definition</b> PartitionPage.cpp:56</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_25d902c24283ab8cfbac54dfa101ad31.html">src</a></li><li class="navelem"><a href="dir_b3b32a2d422265cd25c3323ed0157f81.html">pages</a></li><li class="navelem"><a href="PartitionPage_8hpp.html">PartitionPage.hpp</a></li>
+    <li class="footer">Erzeugt von <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

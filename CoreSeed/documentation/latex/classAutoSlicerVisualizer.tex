@@ -1,0 +1,126 @@
+\doxysection{Auto\+Slicer\+Visualizer Klassenreferenz}
+\hypertarget{classAutoSlicerVisualizer}{}\label{classAutoSlicerVisualizer}\index{AutoSlicerVisualizer@{AutoSlicerVisualizer}}
+
+
+Widget zur grafischen Darstellung der Disk-\/\+Slices. DE\+: Widget zur grafischen Darstellung der Disk-\/\+Slices.  
+
+
+
+
+{\ttfamily \#include $<$Auto\+Slicer\+Visualizer.\+hpp$>$}
+
+Klassendiagramm für Auto\+Slicer\+Visualizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAutoSlicerVisualizer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Klassen}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo}{Slice\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAutoSlicerVisualizer_a396ec8fd3ca31107be832832c87c04fc}{Auto\+Slicer\+Visualizer}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor für den \doxylink{classAutoSlicerVisualizer}{Auto\+Slicer\+Visualizer}. DE\+: Initialisiert das Widget und setzt die Mindesthöhe. EN\+: Initializes the widget and sets the minimum height. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAutoSlicerVisualizer_ad702afcb09977612c4e7d231209e9317}{set\+Slices}} (const QVector$<$ \mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo}{Slice\+Info}} $>$ \&slices)
+\begin{DoxyCompactList}\small\item\em Setzt die Slices, die gezeichnet werden sollen. DE\+: Übernimmt die Slice-\/\+Daten für die Anzeige. EN\+: Sets the slice data for display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Geschützte Methoden}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAutoSlicerVisualizer_a3ebc6ac3091297b821631251af0fee55}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Hauptzeichenfunktion des Widgets. DE\+: Berechnet die Proportionen der Slices und zeichnet sie. EN\+: Calculates slice proportions and renders them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attribute}
+\begin{DoxyCompactItemize}
+\item 
+QVector$<$ \mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo}{Slice\+Info}} $>$ \mbox{\hyperlink{classAutoSlicerVisualizer_a9d1827d581a00aeaf5b47fadd64575dd}{m\+\_\+slices}}
+\item 
+const QColor \mbox{\hyperlink{classAutoSlicerVisualizer_afc239212f2a74054e247a350f34d3fcb}{m\+\_\+base\+Blue}} = QColor("{}\#0057b7"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Ausführliche Beschreibung}
+Widget zur grafischen Darstellung der Disk-\/\+Slices. DE\+: Widget zur grafischen Darstellung der Disk-\/\+Slices. 
+
+\label{doc-constructors}
+\Hypertarget{classAutoSlicerVisualizer_doc-constructors}
+\doxysubsection{Beschreibung der Konstruktoren und Destruktoren}
+\Hypertarget{classAutoSlicerVisualizer_a396ec8fd3ca31107be832832c87c04fc}\index{AutoSlicerVisualizer@{AutoSlicerVisualizer}!AutoSlicerVisualizer@{AutoSlicerVisualizer}}
+\index{AutoSlicerVisualizer@{AutoSlicerVisualizer}!AutoSlicerVisualizer@{AutoSlicerVisualizer}}
+\doxysubsubsection{\texorpdfstring{AutoSlicerVisualizer()}{AutoSlicerVisualizer()}}
+{\footnotesize\ttfamily \label{classAutoSlicerVisualizer_a396ec8fd3ca31107be832832c87c04fc} 
+Auto\+Slicer\+Visualizer\+::\+Auto\+Slicer\+Visualizer (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor für den \doxylink{classAutoSlicerVisualizer}{Auto\+Slicer\+Visualizer}. DE\+: Initialisiert das Widget und setzt die Mindesthöhe. EN\+: Initializes the widget and sets the minimum height. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em parent} & Zeiger auf das Eltern-\/\+Widget. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classAutoSlicerVisualizer_doc-func-members}
+\doxysubsection{Dokumentation der Elementfunktionen}
+\Hypertarget{classAutoSlicerVisualizer_a3ebc6ac3091297b821631251af0fee55}\index{AutoSlicerVisualizer@{AutoSlicerVisualizer}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!AutoSlicerVisualizer@{AutoSlicerVisualizer}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{classAutoSlicerVisualizer_a3ebc6ac3091297b821631251af0fee55} 
+void Auto\+Slicer\+Visualizer\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Hauptzeichenfunktion des Widgets. DE\+: Berechnet die Proportionen der Slices und zeichnet sie. EN\+: Calculates slice proportions and renders them. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em event} & Das Paint-\/\+Event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAutoSlicerVisualizer_ad702afcb09977612c4e7d231209e9317}\index{AutoSlicerVisualizer@{AutoSlicerVisualizer}!setSlices@{setSlices}}
+\index{setSlices@{setSlices}!AutoSlicerVisualizer@{AutoSlicerVisualizer}}
+\doxysubsubsection{\texorpdfstring{setSlices()}{setSlices()}}
+{\footnotesize\ttfamily \label{classAutoSlicerVisualizer_ad702afcb09977612c4e7d231209e9317} 
+void Auto\+Slicer\+Visualizer\+::set\+Slices (\begin{DoxyParamCaption}\item[{const QVector$<$ \mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo}{Slice\+Info}} $>$ \&}]{slices}{}\end{DoxyParamCaption})}
+
+
+
+Setzt die Slices, die gezeichnet werden sollen. DE\+: Übernimmt die Slice-\/\+Daten für die Anzeige. EN\+: Sets the slice data for display. 
+
+Setzt die darzustellenden Slices. DE\+: Übernimmt eine Liste von Slice-\/\+Informationen und triggert das Neuzeichnen. EN\+: Accepts a list of slice information and triggers a repaint.
+
+
+\begin{DoxyParams}{Parameter}
+{\em slices} & Liste der Slices.\\
+\hline
+{\em slices} & QVector mit Slice\+Info-\/\+Strukturen. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classAutoSlicerVisualizer_doc-variable-members}
+\doxysubsection{Dokumentation der Datenelemente}
+\Hypertarget{classAutoSlicerVisualizer_afc239212f2a74054e247a350f34d3fcb}\index{AutoSlicerVisualizer@{AutoSlicerVisualizer}!m\_baseBlue@{m\_baseBlue}}
+\index{m\_baseBlue@{m\_baseBlue}!AutoSlicerVisualizer@{AutoSlicerVisualizer}}
+\doxysubsubsection{\texorpdfstring{m\_baseBlue}{m\_baseBlue}}
+{\footnotesize\ttfamily \label{classAutoSlicerVisualizer_afc239212f2a74054e247a350f34d3fcb} 
+const QColor Auto\+Slicer\+Visualizer\+::m\+\_\+base\+Blue = QColor("{}\#0057b7"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classAutoSlicerVisualizer_a9d1827d581a00aeaf5b47fadd64575dd}\index{AutoSlicerVisualizer@{AutoSlicerVisualizer}!m\_slices@{m\_slices}}
+\index{m\_slices@{m\_slices}!AutoSlicerVisualizer@{AutoSlicerVisualizer}}
+\doxysubsubsection{\texorpdfstring{m\_slices}{m\_slices}}
+{\footnotesize\ttfamily \label{classAutoSlicerVisualizer_a9d1827d581a00aeaf5b47fadd64575dd} 
+QVector$<$\mbox{\hyperlink{structAutoSlicerVisualizer_1_1SliceInfo}{Slice\+Info}}$>$ Auto\+Slicer\+Visualizer\+::m\+\_\+slices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien\+:\begin{DoxyCompactItemize}
+\item 
+src/ui/\mbox{\hyperlink{AutoSlicerVisualizer_8hpp}{Auto\+Slicer\+Visualizer.\+hpp}}\item 
+src/ui/\mbox{\hyperlink{AutoSlicerVisualizer_8cpp}{Auto\+Slicer\+Visualizer.\+cpp}}\end{DoxyCompactItemize}

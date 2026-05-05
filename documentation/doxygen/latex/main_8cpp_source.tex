@@ -1,0 +1,124 @@
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{/home/codeakrobat/neurabsd/CoreSeed/src/main.cpp@{/home/codeakrobat/neurabsd/CoreSeed/src/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{gehe zur Dokumentation dieser Datei}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{comment}{/*\ \ \ \ \ \ \$NeuraBSD:\ main.cpp,\ v\ 1.2\ 2026/02/07\ 16:15:00\ codeakrobat\ Exp\ \$\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2026\ Daniel\ Hilbert\ <lead@neurabsd.org>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ Permission\ to\ use,\ copy,\ modify,\ and\ distribute\ this\ software\ for\ any}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ purpose\ with\ or\ without\ fee\ is\ hereby\ granted,\ provided\ that\ the\ above}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ copyright\ notice\ and\ this\ permission\ notice\ appear\ in\ all\ copies.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{}\ AND\ THE\ AUTHOR\ DISCLAIMS\ ALL\ WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ WITH\ REGARD\ TO\ THIS\ SOFTWARE\ INCLUDING\ ALL\ IMPLIED\ WARRANTIES\ OF}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ MERCHANTABILITY\ AND\ FITNESS.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHOR\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ ANY\ SPECIAL,\ DIRECT,\ INDIRECT,\ OR\ CONSEQUENTIAL\ DAMAGES\ OR\ ANY\ DAMAGES}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ WHATSOEVER\ RESULTING\ FROM\ LOSS\ OF\ USE,\ DATA\ OR\ PROFITS,\ WHETHER\ IN\ AN}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ ACTION\ OF\ CONTRACT,\ NEGLIGENCE\ OR\ OTHER\ TORTIOUS\ ACTION,\ ARISING\ OUT\ OF}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ OR\ IN\ CONNECTION\ WITH\ THE\ USE\ OR\ PERFORMANCE\ OF\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \textcolor{comment}{\ *\ @file\ main.cpp}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \textcolor{comment}{\ *\ @brief\ Main\ entry\ point\ for\ the\ CoreSeed\ graphical\ installer.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \textcolor{comment}{\ *\ @brief\ Haupteinstiegspunkt\ für\ den\ grafischen\ Installer\ CoreSeed.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \textcolor{comment}{\ *\ This\ application\ initializes\ the\ first\ stage\ of\ the\ NeuraBSD\ }}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \textcolor{comment}{\ *\ installation\ process\ using\ Qt6.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \textcolor{comment}{\ *\ Diese\ Anwendung\ initialisiert\ die\ erste\ Phase\ des\ NeuraBSD-\/}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \textcolor{comment}{\ *\ Installationsprozesses\ unter\ Verwendung\ von\ Qt6.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \textcolor{comment}{\ *\ @author\ CodeAkrobat\ (Daniel\ Hilbert)}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <QApplication>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <QFont>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \textcolor{comment}{\ *\ @brief\ Main\ function\ initializing\ the\ Qt6\ environment.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \textcolor{comment}{\ *\ @brief\ Hauptfunktion\ zur\ Initialisierung\ der\ Qt6-\/Umgebung.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \textcolor{comment}{\ *\ @param\ argc\ Argument\ count\ /\ Anzahl\ der\ Argumente.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \textcolor{comment}{\ *\ @param\ argv\ Argument\ vector\ /\ Argument-\/Vektor.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \textcolor{comment}{\ *\ @return\ int\ Exit\ status\ /\ Rückgabestatus.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}\mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00048}}\ \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ QApplication\ app(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \textcolor{comment}{\ \ \ \ \ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ @section\ UI-\/Initialization}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Setting\ up\ the\ main\ window\ with\ NeuraBSD\ branding.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Einrichten\ des\ Hauptfensters\ mit\ NeuraBSD-\/Branding.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ QWidget\ window;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ window.setWindowTitle(\textcolor{stringliteral}{"{}NeuraBSD\ CoreSeed\ -\/\ System\ Setup"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ window.resize(1024,\ 768);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Apply\ global\ styles\ /\ Globale\ Stile\ anwenden\ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ window.setStyleSheet(}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}background-\/color:\ \#0a0d10;"{}}\ \textcolor{comment}{//\ Deep\ Neura\ Blue}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}color:\ \#b0b0b0;"{}}ttt\ \ \textcolor{comment}{//\ Text\ Grey}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ QVBoxLayout\ *layout\ =\ \textcolor{keyword}{new}\ QVBoxLayout(\&window);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ layout-\/>setContentsMargins(50,\ 50,\ 50,\ 50);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ *\ Title\ Setup\ }}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Titles\ use\ white\ for\ high\ contrast\ on\ dark\ background.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Titel\ verwenden\ Weiß\ für\ hohen\ Kontrast\ auf\ dunklem\ Grund.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ QLabel\ *title\ =\ \textcolor{keyword}{new}\ QLabel(\textcolor{stringliteral}{"{}Willkommen\ bei\ NeuraBSD"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ QFont\ titleFont(\textcolor{stringliteral}{"{}Courier\ New"{}},\ 28,\ QFont::Bold);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ title-\/>setFont(titleFont);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ title-\/>setStyleSheet(\textcolor{stringliteral}{"{}color:\ \#ffffff;"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ title-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ QLabel\ *subtitle\ =\ \textcolor{keyword}{new}\ QLabel(}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}Alles\ beginnt\ mit\ der\ grafischen\ Installation.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}Everything\ starts\ with\ the\ graphical\ installation."{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ subtitle-\/>setFont(QFont(\textcolor{stringliteral}{"{}Courier\ New"{}},\ 14));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ subtitle-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Main\ Action\ Button}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Stylized\ with\ the\ Beastie\ Red/Purple\ accent\ border.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Gestaltet\ mit\ dem\ Beastie-\/Red/Purple\ Akzentrand.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ QPushButton\ *startButton\ =\ \textcolor{keyword}{new}\ QPushButton(}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}Installation\ starten\ /\ Start\ Installation"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ startButton-\/>setFixedSize(350,\ 60);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ startButton-\/>setStyleSheet(}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}QPushButton\ \{"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ background-\/color:\ \#121212;"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ color:\ \#b0b0b0;"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ border:\ 2px\ solid\ \#d32f2f;"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ border-\/radius:\ 8px;"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ font-\/weight:\ bold;"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ font-\/family:\ 'Courier\ New';"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}QPushButton:hover\ \{"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ background-\/color:\ \#d32f2f;"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\ \ color:\ white;"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ t\textcolor{stringliteral}{"{}\}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Add\ components\ to\ layout\ /\ Komponenten\ zum\ Layout\ hinzufügen\ */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ layout-\/>addWidget(title);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ layout-\/>addWidget(subtitle);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ layout-\/>addStretch();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ layout-\/>addWidget(startButton,\ 0,\ Qt::AlignCenter);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ window.show();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (app.exec());}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118\ \}}
+
+\end{DoxyCode}
