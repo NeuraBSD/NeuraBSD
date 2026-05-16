@@ -1,46 +1,36 @@
-# Contact NeuraBSD 🌀
+# Contact NeuraBSD
 
-This document outlines the official communication channels for the NeuraBSD project. To ensure a timely response, please direct your inquiry to the appropriate department.
+This document outlines the official communication channels for the NeuraBSD project. To ensure a timely response, please direct your technical or strategic inquiries to the appropriate channel.
 
 ---
 
-## 📧 Email Directory
+## Email Directory
 
-### Project Governance
-For general project inquiries, partnerships, or high-level strategic decisions.
+### Project Governance & Strategy
+For general project inquiries, partnerships, trademark questions, or high-level strategic decisions.
 * **Project Lead:** `lead@neurabsd.org`
-* **General Info:** `info@neurabsd.org`
+* **General Info & Legal:** `info@neurabsd.org`
 
-### System Architecture & Core Development
-Technical inquiries regarding the base system and hardware integration.
-* **Kernel & Base-System:** `dev@neurabsd.org`
-* **NVIDIA Research:** `graphics@neurabsd.org`
-
-### Module-Specific Support
-Direct contact for the primary components of the NeuraBSD ecosystem.
-* **DaemonPath (Boot Manager):** `daemonpath@neurabsd.org`
-* **CoreSeed (Graphical Installer):** `coreseed@neurabsd.org`
-* **AxonSurface (Desktop Environment):** `axon@neurabsd.org`
-
-### Security & Legal
-High-priority channels for system integrity and branding.
-* **Security Vulnerabilities:** `security@neurabsd.org`
-* **Trademark & Licensing:** `legal@neurabsd.org`
+### System Architecture & Development
+For all technical inquiries, bug reports, security vulnerabilities, and code contributions regarding the entire NeuraBSD ecosystem (`NeuraCore`, `DaemonPath`, `CoreSeed`, and `AxonSurface`).
+* **Core Development & Security:** `dev@neurabsd.org`
 
 ---
 
-## 📢 News & Social Media
+## News & Progress
 The journey of NeuraBSD is documented in episodic Acts. Follow our progress for the latest updates and project milestones.
 
-* **NeuraBSD News:** [Insert Link to Social Media/Blog]
-* **Project History:** Follow the appendix in our official news updates.
+* **NeuraBSD News & Updates:** 
+https://techhub.social/@NeuraBSD
+https://www.facebook.com/NeuraBSD
 
 ---
 
-## 📝 Communication Guidelines
-1. **Technical Reports:** When reporting issues, please include your hardware specifications (specifically CPU and GPU details).
-2. **Style Compliance:** Ensure all code-related discussions align with our `CODE_STANDARDS.md` and OpenBSD's `style(9)`.
-3. **Languages:** Official project communication is conducted in **English** and **German**.
+## Communication Guidelines
+1. **Security Vulnerabilities:** If you discover a security vulnerability, please contact `dev@neurabsd.org` privately. Do not open a public GitHub issue.
+2. **Technical Inquiries:** When sending development questions or reporting issues, please include your hardware specifications (specifically CPU and GPU details).
+3. **Style Compliance:** Ensure all code-related discussions align with our `CODE_STANDARDS.md` and OpenBSD's `style(9)`.
+4. **Languages:** Official project communication is conducted in **English** and **German**.
 
 ---
 *Everything starts with CoreSeed. Everything boots with DaemonPath. NeuraBSD.*
