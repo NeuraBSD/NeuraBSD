@@ -24,7 +24,7 @@ export namespace neurabsd::coreseed {
 
 /**
  * @enum ProgressPhase
- * @brief Tracks the active installation step for non-linear step-switching.
+ * @brief Tracks the active installation step for the sidebar navigation.
  */
 enum class ProgressPhase : uint32_t {
 	PHASE_WELCOME        = 0,
@@ -38,7 +38,7 @@ enum class ProgressPhase : uint32_t {
 
 /**
  * @struct DeploymentState
- * @brief Telemetry package dispatched to the active UI frontend (CLI/TUI/GUI).
+ * @brief Telemetry package dispatched to the active UI view (Sidebar / Main Frame).
  */
 struct DeploymentState {
 	uint32_t percentage;
@@ -49,7 +49,7 @@ struct DeploymentState {
 
 /**
  * @class InstallationController
- * @brief Stateless execution engine driving the NeuraBSD deployment steps.
+ * @brief Stateless execution engine driving the NeuraBSD industrial layout deployment.
  */
 class InstallationController {
 public:
@@ -88,7 +88,7 @@ public:
 	/**
 	 * @brief Drives the physical extraction and progress reporting tailored for Industrial Silver rendering.
 	 * @param current_percentage Manual or calculated step incremental value.
-	 * @param phase The active state-machine step.
+	 * @param phase The active state-machine step representing the sidebar highlights.
 	 * @return DeploymentState Feedback package for UI updating.
 	 */
 	static DeploymentState
